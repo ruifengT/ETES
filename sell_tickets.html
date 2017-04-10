@@ -8,9 +8,31 @@
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
       <link href="css/style.css" rel="stylesheet">
+      <script>
+          function getMsg(){
+              var msg = getParameterByName('msg');
+              if(msg == 'error'){
+                  alert('Error posting the ticket.');
+              }
+              else if(msg == 'success'){
+                  alert('Your tickets has been posted successfully.');
+              }
+          }
 
+          function getParameterByName(name, url) {
+              if (!url) {
+                url = window.location.href;
+              }
+              name = name.replace(/[\[\]]/g, "\\$&");
+              var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                  results = regex.exec(url);
+              if (!results) return null;
+              if (!results[2]) return '';
+              return decodeURIComponent(results[2].replace(/\+/g, " "));
+          }
+      </script>
     </head>
-    <body class="sell_events">
+    <body class="sell_events" onload="getMsg()">
       <div id="mySidenav" class="sidenav">
         <a href="index.html" id="Home">Home</a>
         <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
@@ -53,7 +75,15 @@
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
 
 
-                <form><input type="search" name="search" placeholder="Search for tickets"></form>
+                <form action="php/Postticket.php" method="post">
+                    <input placeholder="User ID" name="ID" type="text" required="" /><br>
+                    <input placeholder="TICKET NAME" name="Name" type="text" required="" /><br>
+                    <input placeholder="TICKET DETAIL" name="Detail" type="text" required="" /><br>
+                    <input placeholder="QUANTITY" name="Quantity" type="number" required="" /><br>
+                    <input placeholder="PRICE" name="Price" type="number" required="" /><br>
+                    <input placeholder="ADDRESS" name="Address" type="text" required="" /><br>
+                    <input type='submit' value='POST TICKET'>
+                </form>
                 <p></p>
 
 

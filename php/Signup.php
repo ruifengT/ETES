@@ -7,9 +7,6 @@ $user_confirmpassward = $_POST['ConfirmPassword'];
 $user_email = $_POST['Email'];
 $datetime = date('YmdHis');
 
-
-echo $user_password;
-echo $user_confirmpassward;
 if($user_password != $user_confirmpassward){
     header('location: ../sign_up/signup.html?error=password');
 }
