@@ -18,9 +18,9 @@
         var id = getParameterByName('user_id');
         /*var obj;
         $.ajax({
-            url: 'php/UserDashboard.php', 
-            type: 'POST', 
-            data: {user_id: id}, 
+            url: 'php/UserDashboard.php',
+            type: 'POST',
+            data: {user_id: id},
             dataType: 'json',
             success: function(result){
                 $('#output').html(JSON.stringify(result));
@@ -37,7 +37,7 @@
                 for (x in myObj) {
                     txt += "User Id: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Username: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Credit Card Number: "+myObj[x].user_creditcard +" <br>Account Date Created: "+myObj[x].user_create_stmp;
                 }
-                txt += "</p>"        
+                txt += "</p>"
                 document.getElementById("output").innerHTML = txt;
             }
         };
@@ -56,12 +56,15 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
+    function gotosell(){
+        window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
+    }
 </script>
 <body onload="getData()">
 
     <h1>userdashboard</h1>
     <div id="output"></div>
-
+    <button onclick="gotosell()">SELL TICKET</button>
 
 </body>
 </html>

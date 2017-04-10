@@ -9,13 +9,20 @@
 
       <link href="css/style.css" rel="stylesheet">
       <script>
-          function getMsg(){
+          function getPara(){
+              var id = getParameterByName('user_id');
               var msg = getParameterByName('msg');
-              if(msg == 'error'){
-                  alert('Error posting the ticket.');
+              if(id == null){
+                  alert('You need to log in first.');
+                  window.location = 'sign_up/signup.html';
               }
-              else if(msg == 'success'){
-                  alert('Your tickets has been posted successfully.');
+              else{
+                  if(msg == 'error'){
+                      alert('Error posting the ticket.');
+                  }
+                  else if(msg == 'success'){
+                      alert('Your tickets has been posted successfully.');
+                  }
               }
           }
 
@@ -32,14 +39,13 @@
           }
       </script>
     </head>
-    <body class="sell_events" onload="getMsg()">
+    <body class="sell_events" onload="getPara()">
       <div id="mySidenav" class="sidenav">
         <a href="index.html" id="Home">Home</a>
         <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
         <a href="myTickets.html" id="myTickets">My Tickets</a>
         <a href="contact.html" id="Contact">Contact</a>
       </div>
-
 
 
 
@@ -76,7 +82,11 @@
 
 
                 <form action="php/Postticket.php" method="post">
-                    <input placeholder="User ID" name="ID" type="text" required="" /><br>
+                    <input placeholder="User ID" id="user_id" name="ID" type="text" required="" /><br>
+                    <script type="text/javascript">
+                    var id = document.getElementById("user_id");
+                    id.value = getParameterByName('user_id');
+                    </script>
                     <input placeholder="TICKET NAME" name="Name" type="text" required="" /><br>
                     <input placeholder="TICKET DETAIL" name="Detail" type="text" required="" /><br>
                     <input placeholder="QUANTITY" name="Quantity" type="number" required="" /><br>
@@ -85,6 +95,9 @@
                     <input type='submit' value='POST TICKET'>
                 </form>
                 <p></p>
+
+
+
 
 
             </div>
@@ -115,6 +128,4 @@
       </script>
       <script src="js/signup.js"></script>
     </body>
-</html>
-
 </html>

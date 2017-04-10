@@ -12,10 +12,10 @@ $datetime = date('YmdHis');
 $sql_post_ticket = "INSERT INTO `tickets`(`ticket_name`, `ticket_detail`, `ticket_quantity`, `ticket_price`, `ticket_postedby`, `ticket_pickup_address`, `ticket_stmp`) VALUES (" . "'". $ticket_name . "','" . $ticket_detail . "'," . $ticket_quantity . "," . $ticket_price . ",'" . $ticket_postedby . "','" . $ticket_pickup_address . "'," . $datetime . ")";
 
 if(!mysqli_query($conn, $sql_post_ticket)){
-    header('location: ../sell_tickets.html?msg=error');
+    header('location: ../sell_tickets.html?user_id=' . $ticket_postedby . '&msg=error');
 }
 else{
-    header('location: ../sell_tickets.html?msg=success');
+    header('location: ../sell_tickets.html?user_id=' . $ticket_postedby . '&msg=success');
 }
 
 mysqli_close($conn);
