@@ -1,0 +1,168 @@
+<!--
+	Author: W3layouts
+	Edited by Nanthana Thanonklin
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Welcome to Ticket Boosters</title>
+
+
+
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+
+<!-- css files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+<link href="css/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
+<!-- //css files -->
+
+<!-- online-fonts -->
+<link href="//fonts.googleapis.com/css?family=Play:400,700&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext" rel="stylesheet">
+<!--//online-fonts -->
+<link href="css/style.css" rel="stylesheet">
+<style>
+#mySidenav a {
+    position: absolute; /* Position them relative to the browser window */
+    left: -100px; /* Position them outside of the screen */
+    transition: 0.3s; /* Add transition on hover */
+    padding: 15px; /* 15px padding */
+    width: 100px; /* Set a specific width */
+    text-decoration: none; /* Remove underline */
+    font-size: 12px; /* Increase font size */
+		color:white;
+    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+    left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#Home {
+    top: 20px;
+    background-color: #76448A    ;
+}
+
+#findEvents{
+    top: 80px;
+    background-color: #8E44AD  ;
+}
+
+#myTickets {
+    top: 140px;
+    background-color:#4A235A;
+}
+
+#Contact {
+    top: 200px;
+    background-color: #A569BD	 ;
+}
+</style>
+<script>
+    function getError(){
+        var error = getParameterByName('error');
+        if(error == 'password'){
+            alert('Same password.');
+        }
+        else if(error == 'login'){
+            alert('Same login info exists in database.');
+        }
+        else if(error == 'user'){
+            alert('Same username exists in database.');
+        }
+        else if(error == 'login_empty'){
+            alert('Your login info does not exist in database.');
+        }
+        else if(error == 'wrong_password'){
+            alert('Your password does not match the one in database');
+        }
+    }
+
+    function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+</script>
+</head>
+
+
+<body onload='getError()'>
+
+	<div id="mySidenav" class="sidenav">
+		<a href="../index.html" id="Home">Home</a>
+		<a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
+		<a href="myTickets.html" id="myTickets">My Tickets</a>
+		<a href="contact.html" id="Contact">Contact</a>
+	</div>
+
+
+
+<!--header-->
+<div class="agileheader">
+	<h1>Tix Hub</h1>
+</div>
+<!--//header-->
+
+<!--main-->
+<div class="main-w3l">
+	<div class="w3layouts-main">
+		<h2>Sign In</h2>
+			<form action="../php/login.php" method="post">
+                <input placeholder="USERNAME" name="Name" type="text" required="" />
+				<span class="icons i1"><i class="fa fa-user" aria-hidden="true"></i></span>
+				<input placeholder="PASSWORD" name="Password" type="password" required="" />
+				<span class="icons i2"><i class="fa fa-key" aria-hidden="true"></i></span>
+					<input type="submit" value="Sign In" name="login">
+			</form>
+			<h6><a href="#">Forgot Password?</a></h6>
+
+			<h3>(or)</h3>
+			<div class="fb-login-button" data-max-rows="1" data-size="icon" data-show-faces="false" data-auto-logout-link="false"></div>
+			<div class="social_icons agileinfo">
+				<div class="social">
+					<a href="" class="icon fb fo"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a href="" class="icon tw fo"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a href="" class="icon gp fo"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+				</div>
+
+			</div>
+
+	</div>
+	<div class="w3layouts-main2">
+		<h3>Sign Up</h3>
+			<form action="../php/Signup.php" method="post">
+				<input placeholder="USERNAME" name="Name" type="text" required="" />
+				<span class="icons i3"><i class="fa fa-user" aria-hidden="true"></i></span>
+				<input placeholder="E-MAIL" name="Email" type="email" required="" />
+				<span class="icons i4"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+				<input placeholder="PASSWORD" name="Password" type="password" required="" />
+				<span class="icons i5"><i class="fa fa-key" aria-hidden="true"></i></span>
+				<input placeholder="CONFIRM PASSWORD" name="ConfirmPassword" type="password" required="" />
+				<span class="icons i6"><i class="fa fa-key" aria-hidden="true"></i></span>
+					<input type="submit" value="Sign UP" name="login">
+			</form>
+	</div>
+	<div class="clear"></div>
+</div>
+<!--//main-->
+
+<!--footer-->
+<div class="footer-w3l">
+	<p>&copy; 2017 All rights reserved</p>
+</div>
+<!--//footer-->
+
+</body>
+</html>

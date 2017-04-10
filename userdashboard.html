@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>ETES Guest Registration</title>
+
+
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<!--for css editing, change following and create new css-->
+<link rel="stylesheet" href="css/style.css">
+<!--don't delete the following line-->
+<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+
+</head>
+<script>
+    function getData(){
+        var id = getParameterByName('user_id');
+        /*var obj;
+        $.ajax({
+            url: 'php/UserDashboard.php', 
+            type: 'POST', 
+            data: {user_id: id}, 
+            dataType: 'json',
+            success: function(result){
+                $('#output').html(JSON.stringify(result));
+            }
+        });*/
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { "table":"customers", "limit":20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                txt += "<p>"
+                for (x in myObj) {
+                    txt += "User Id: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Username: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Credit Card Number: "+myObj[x].user_creditcard +" <br>Account Date Created: "+myObj[x].user_create_stmp;
+                }
+                txt += "</p>"        
+                document.getElementById("output").innerHTML = txt;
+            }
+        };
+        xmlhttp.open("POST", "php/UserDashboard.php?user_id=" + id, true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("user_id=" + id);
+    }
+    function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+</script>
+<body onload="getData()">
+
+    <h1>userdashboard</h1>
+    <div id="output"></div>
+
+
+</body>
+</html>
