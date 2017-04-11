@@ -2,13 +2,14 @@
 <html >
 <head>
 <meta charset="UTF-8">
-<title>ETES Guest Registration</title>
+<title>ETES - Dashboard</title>
 
 
-<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'>
-<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-<!--for css editing, change following and create new css-->
-<link rel="stylesheet" href="css/style.css">
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+      <link href="css/style.css" rel="stylesheet">
 <!--don't delete the following line-->
 <script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
 
@@ -35,13 +36,33 @@
                 myObj = JSON.parse(this.responseText);
                 txt += "<p>"
                 for (x in myObj) {
-                    txt += "User Id: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Username: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Credit Card Number: "+myObj[x].user_creditcard +" <br>Account Date Created: "+myObj[x].user_create_stmp;
+                    txt += "User ID: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Username: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Credit Card Number: "+myObj[x].user_creditcard +" <br>Account Date Created: "+myObj[x].user_create_stmp;
                 }
                 txt += "</p>"
                 document.getElementById("output").innerHTML = txt;
             }
         };
         xmlhttp.open("POST", "php/UserDashboard.php?user_id=" + id, true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("user_id=" + id);
+        
+        var tix = getParameterByName('ticket_postedby');
+        var obj, dbParam, xmlhttp, myObj, x, foo = "";
+        obj = { "table":"tickets", "limit":20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                foo += "<p>"
+                for (x in myObj) {
+                    foo += "User ID: "+myObj[x].ticket_postedby+" <br>Ticket Name: "+myObj[x].ticket_name+" <br>Details: "+myObj[x].ticket_detail+" <br>Ticket Quantity: "+myObj[x].ticket_quantity+" <br>Address: "+myObj[x].ticket_pickup_address+" <br>Ticket Price: "+myObj[x].ticket_price +" <br>Posted on: "+myObj[x].ticket_stmp;
+                }
+                foo += "</p>"
+                document.getElementById("tickets").innerHTML = foo;
+            }
+        };
+        xmlhttp.open("POST", "php/tickets.php?ticket_postedby=" + id, true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("user_id=" + id);
     }
@@ -61,10 +82,42 @@
     }
 </script>
 <body onload="getData()">
+      <div id="mySidenav" class="sidenav">
+        <a href="index.html" id="Home">Home</a>
+        <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
+        <a href="myTickets.html" id="myTickets">My Tickets</a>
+        <a href="contact.html" id="Contact">Contact</a>
+      </div>
+    
+    
+      <div class="text-center">
+        <div class="container" id="buy">
+          <div class="row">
+            <div class="col-md-12">
 
-    <h1>userdashboard</h1>
+    <h1>User Dashboard</h1>
     <div id="output"></div>
-    <button onclick="gotosell()">SELL TICKET</button>
-
+    <button>Edit Profile</button><button onclick="gotosell()">Sell Tickets</button></p>
+<!--<button class="reveal" href="sell_tickets.html?user_id=" target="page">Sell Ticket</button></p>
+    <div class="page"></div> -->
+    <h2>My Tickets</h2>
+              <div id="tickets">tix</div>
+              
+          </div>
+    </div>
+    
 </body>
+    
 </html>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $('.reveal').on('click', function(e){
+        e.preventDefault();
+        var link = $(this).attr('href');
+        $('.page').load(link);
+    });
+
+});
+</script>-->
