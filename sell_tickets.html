@@ -1,59 +1,22 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <title>ETES - My Tickets</title>
+      <title>ETES - Sell Tickets</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
       <link href="css/style.css" rel="stylesheet">
-      <script>
-          function getPara(){
-              var id = getParameterByName('user_id');
-              var msg = getParameterByName('msg');
-              if(id == null){
-                  alert('You need to log in first.');
-                  window.location = 'sign_up/signup.html';
-              }
-              else{
-                  if(msg == 'error'){
-                      alert('Error posting the ticket.');
-                  }
-                  else if(msg == 'success'){
-                      alert('Your tickets has been posted successfully.');
-                  }
-              }
-          }
 
-          function getParameterByName(name, url) {
-              if (!url) {
-                url = window.location.href;
-              }
-              name = name.replace(/[\[\]]/g, "\\$&");
-              var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                  results = regex.exec(url);
-              if (!results) return null;
-              if (!results[2]) return '';
-              return decodeURIComponent(results[2].replace(/\+/g, " "));
-          }
-      </script>
     </head>
-    <body class="sell_events" onload="getPara()">
+    <body class="sell_events">
       <div id="mySidenav" class="sidenav">
         <a href="index.html" id="Home">Home</a>
         <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
         <a href="myTickets.html" id="myTickets">My Tickets</a>
         <a href="contact.html" id="Contact">Contact</a>
       </div>
-
-
-
-
-
-
-
-
       <div class="text-center">
         <div class="container" id="buy">
           <div class="row">
@@ -61,7 +24,20 @@
 
             <div class="col-md-12">
 
-
+                <form action="php/Postticket.php" method="post">
+                    <input placeholder="User ID" id="user_id" name="ID" type="text" required="" /><br>
+                    <script type="text/javascript">
+                    var id = document.getElementById("user_id");
+                    id.value = getParameterByName('user_id');
+                    </script>
+                    <input placeholder="TICKET NAME" name="Name" type="text" required="" /><br>
+                    <input placeholder="TICKET DETAIL" name="Detail" type="text" required="" /><br>
+                    <input placeholder="QUANTITY" name="Quantity" type="number" required="" /><br>
+                    <input placeholder="PRICE" name="Price" type="number" required="" /><br>
+                    <input placeholder="ADDRESS" name="Address" type="text" required="" /><br>
+                    <input type='submit' value='POST TICKET'>
+                </form>
+                <p></p>
 
 
               <!--
@@ -81,24 +57,8 @@
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
 
 
-                <form action="php/Postticket.php" method="post">
-                    <input placeholder="User ID" id="user_id" name="ID" type="text" required="" /><br>
-                    <script type="text/javascript">
-                    var id = document.getElementById("user_id");
-                    id.value = getParameterByName('user_id');
-                    </script>
-                    <input placeholder="TICKET NAME" name="Name" type="text" required="" /><br>
-                    <input placeholder="TICKET DETAIL" name="Detail" type="text" required="" /><br>
-                    <input placeholder="QUANTITY" name="Quantity" type="number" required="" /><br>
-                    <input placeholder="PRICE" name="Price" type="number" required="" /><br>
-                    <input placeholder="ADDRESS" name="Address" type="text" required="" /><br>
-                    <input type='submit' value='POST TICKET'>
-                </form>
+                <form><input type="search" name="search" placeholder="Search for tickets"></form>
                 <p></p>
-
-
-
-
 
             </div>
 
@@ -128,4 +88,6 @@
       </script>
       <script src="js/signup.js"></script>
     </body>
+</html>
+
 </html>
