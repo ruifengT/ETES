@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <title>ETES - My Tickets</title>
+      <title>ETES - Sell Tickets</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,15 +17,6 @@
         <a href="myTickets.html" id="myTickets">My Tickets</a>
         <a href="contact.html" id="Contact">Contact</a>
       </div>
-
-
-
-
-
-
-
-
-
       <div class="text-center">
         <div class="container" id="buy">
           <div class="row">
@@ -33,7 +24,20 @@
 
             <div class="col-md-12">
 
-
+                <form action="php/Postticket.php" method="post">
+                    <input placeholder="User ID" id="user_id" name="ID" type="text" required="" /><br>
+                    <script type="text/javascript">
+                    var id = document.getElementById("user_id");
+                    id.value = getParameterByName('user_id');
+                    </script>
+                    <input placeholder="TICKET NAME" name="Name" type="text" required="" /><br>
+                    <input placeholder="TICKET DETAIL" name="Detail" type="text" required="" /><br>
+                    <input placeholder="QUANTITY" name="Quantity" type="number" required="" /><br>
+                    <input placeholder="PRICE" name="Price" type="number" required="" /><br>
+                    <input placeholder="ADDRESS" name="Address" type="text" required="" /><br>
+                    <input type='submit' value='POST TICKET'>
+                </form>
+                <p></p>
 
 
               <!--
@@ -55,7 +59,6 @@
 
                 <form><input type="search" name="search" placeholder="Search for tickets"></form>
                 <p></p>
-
 
             </div>
 
