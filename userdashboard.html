@@ -56,7 +56,7 @@
                 myObj = JSON.parse(this.responseText);
                 foo += "<p>"
                 for (x in myObj) {
-                    foo += "User ID: "+myObj[x].ticket_postedby+" <br>Ticket Name: "+myObj[x].ticket_name+" <br>Details: "+myObj[x].ticket_detail+" <br>Ticket Quantity: "+myObj[x].ticket_quantity+" <br>Address: "+myObj[x].ticket_pickup_address+" <br>Ticket Price: "+myObj[x].ticket_price +" <br>Posted on: "+myObj[x].ticket_stmp;
+                    foo += "Ticket Name: "+myObj[x].ticket_name+" <br>Details: "+myObj[x].ticket_detail+" <br>Ticket Quantity: "+myObj[x].ticket_quantity+" <br>Address: "+myObj[x].ticket_pickup_address+" <br>Ticket Price: $"+myObj[x].ticket_price +" <br>Posted on: "+myObj[x].ticket_stmp+"<br><br>";
                 }
                 foo += "</p>"
                 document.getElementById("tickets").innerHTML = foo;
@@ -101,7 +101,7 @@
 <!--<button class="reveal" href="sell_tickets.html?user_id=" target="page">Sell Ticket</button></p>
     <div class="page"></div> -->
     <h2>My Tickets</h2>
-              <div id="tickets">tix</div>
+              <div id="tickets">You don't have any tickets. Why not try listing some?</div>
               
           </div>
     </div>
