@@ -45,60 +45,30 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 /* The about link: 20px from the top with a green background */
 #Home {
     top: 20px;
-    background-color: #76448A    ;
+    background-color: #F4A51A  ;
 }
 
 #findEvents{
     top: 80px;
-    background-color: #8E44AD  ;
+    background-color: #F4A51A ;
 }
 
 #myTickets {
     top: 140px;
-    background-color:#4A235A;
+    background-color: #F4A51A;
 }
 
 #Contact {
     top: 200px;
-    background-color: #A569BD	 ;
+    background-color: #F4A51A;
 }
-</style>
-<script>
-    function getError(){
-        var error = getParameterByName('error');
-        if(error == 'password'){
-            alert('Same password.');
-        }
-        else if(error == 'login'){
-            alert('Same login info exists in database.');
-        }
-        else if(error == 'user'){
-            alert('Same username exists in database.');
-        }
-        else if(error == 'login_empty'){
-            alert('Your login info does not exist in database.');
-        }
-        else if(error == 'wrong_password'){
-            alert('Your password does not match the one in database');
-        }
-    }
 
-    function getParameterByName(name, url) {
-        if (!url) {
-          url = window.location.href;
-        }
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-</script>
+
+</style>
 </head>
 
 
-<body onload='getError()'>
+<body>
 
 	<div id="mySidenav" class="sidenav">
 		<a href="../index.html" id="Home">Home</a>
@@ -111,7 +81,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 <!--header-->
 <div class="agileheader">
-	<h1>Tix Hub</h1>
+	<h1>Welcome to ETES</h1>
 </div>
 <!--//header-->
 
@@ -119,9 +89,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <div class="main-w3l">
 	<div class="w3layouts-main">
 		<h2>Sign In</h2>
-			<form action="../php/login.php" method="post">
-                <input placeholder="USERNAME" name="Name" type="text" required="" />
-				<span class="icons i1"><i class="fa fa-user" aria-hidden="true"></i></span>
+			<form action="#" method="post">
+				<input placeholder="E-MAIL" name="Email" type="email" required="" />
+				<span class="icons i1"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
 				<input placeholder="PASSWORD" name="Password" type="password" required="" />
 				<span class="icons i2"><i class="fa fa-key" aria-hidden="true"></i></span>
 					<input type="submit" value="Sign In" name="login">
@@ -142,14 +112,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>
 	<div class="w3layouts-main2">
 		<h3>Sign Up</h3>
-			<form action="../php/Signup.php" method="post">
+			<form action="#" method="post">
 				<input placeholder="USERNAME" name="Name" type="text" required="" />
 				<span class="icons i3"><i class="fa fa-user" aria-hidden="true"></i></span>
 				<input placeholder="E-MAIL" name="Email" type="email" required="" />
 				<span class="icons i4"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
 				<input placeholder="PASSWORD" name="Password" type="password" required="" />
 				<span class="icons i5"><i class="fa fa-key" aria-hidden="true"></i></span>
-				<input placeholder="CONFIRM PASSWORD" name="ConfirmPassword" type="password" required="" />
+				<input placeholder="CONFIRM PASSWORD" name="Password" type="password" required="" />
 				<span class="icons i6"><i class="fa fa-key" aria-hidden="true"></i></span>
 					<input type="submit" value="Sign UP" name="login">
 			</form>

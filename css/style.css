@@ -27,22 +27,22 @@ Custom Styles. Bootstrap Styles are default'
 /* The about link: 20px from the top with a green background */
 #Home {
     top: 20px;
-    background-color: #76448A    ;
+    background-color: #F4A51A;
 }
 
 #findEvents{
     top: 80px;
-    background-color: #8E44AD  ;
+    background-color: #F4A51A;
 }
 
 #myTickets {
     top: 140px;
-    background-color:#4A235A;
+    background-color: #F4A51A;
 }
 
 #Contact {
     top: 200px;
-    background-color: #A569BD	 ;
+    background-color: #F4A51A;
 }
 
 
@@ -72,12 +72,12 @@ header.with-boxed {
 }
 
 
-/*Typography*/
+/*Text in the side menu bar*/
 a {
-	color: #6dc5b5;
+	color: #8D0859  ;
 }
 a:hover {
-	color: #6dc5b5;
+	color: #fff;
 	text-decoration: underline;
 }
 hr {
@@ -536,7 +536,7 @@ footer .btn.btn-primary {
 	line-height: 36px;
 }
 .three-blocks {
-	background: url('../images/chad-kirchoff-184856.jpg') no-repeat;
+	background: url('../images/upcoming_events.jpg') no-repeat;
 	background-size: cover;
 }
 
@@ -546,13 +546,13 @@ footer .btn.btn-primary {
 }
 
 .sell_events {
-	background: url('../images/sell_bg.jpg') no-repeat;
+	background: url('../images/upcoming_events.jpg') no-repeat;
 	background-size: cover;
 }
 
 
 .sport_events {
-	background: url('../images/sport_bg.jpg') no-repeat;
+	background: url('../images/upcoming_events.jpg') no-repeat;
 	background-size: cover;
 }
 
@@ -621,7 +621,7 @@ footer .btn.btn-primary {
 	font-family: "Roboto", serif;
 }
 .orange {
-	color: #6dc5b5;
+	
 	padding: 0 0 10px 0;
 }
 .black-text {
@@ -647,28 +647,7 @@ footer .btn.btn-primary {
 .socialicon-mail {
 	background: url('../images/social/mail.png') no-repeat;
 }
-/*prefooter*/
-.prefooter {
-	background: url('../images/image_2000x324.jpg') no-repeat;
-	background-size: 100% 100%;
-	padding: 80px 0;
-}
-.prefooter h2 {
-	color: #fff;
-}
-.prefooter h2 span {
-	color: #6dc5b5;
-	border: none;
-}
-/* Contact Form */
-.contact-form {
-}
-.contact-form .col-md-6 {
-	padding: 0 20px 0 0;
-}
-.contact-form .col-md-6:nth-child(2) {
-	padding: 0 0px 0 0;
-}
+
 /* Aside */
 aside h3 {
 	line-height: 11px;
@@ -709,8 +688,8 @@ aside a.btn {
 }
 /* Footer */
 footer {
-	background: #1b2021;
-	padding: 5px 0 5px;
+	
+	padding: 0px 0 0px;
 	color: rgba(255,255,255,0.6);
 }
 footer h3 {
