@@ -65,10 +65,42 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
 </style>
+<script>
+    function getError(){
+        var error = getParameterByName('error');
+        if(error == 'password'){
+            alert('Password does not match.');
+        }
+        else if(error == 'login'){
+            alert('Same login info exists in database.');
+        }
+        else if(error == 'user'){
+            alert('Same username exists in database.');
+        }
+        else if(error == 'login_empty'){
+            alert('Your login info does not exist in database.');
+        }
+        else if(error == 'wrong_password'){
+            alert('Your password does not match the one in database');
+        }
+    }
+
+    function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+</script>
 </head>
 
 
-<body>
+<body onload='getError()'>
 
 	<div id="mySidenav" class="sidenav">
 		<a href="../index.html" id="Home">Home</a>
@@ -89,7 +121,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <div class="main-w3l">
 	<div class="w3layouts-main">
 		<h2>Sign In</h2>
-			<form action="#" method="post">
+			<form action="../php/login.php" method="post">
 				<input placeholder="USERNAME" name="Name" type="text" required="" />
 				<span class="icons i1"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
 				<input placeholder="PASSWORD" name="Password" type="password" required="" />
@@ -112,14 +144,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>
 	<div class="w3layouts-main2">
 		<h3>Sign Up</h3>
-			<form action="#" method="post">
+			<form action="../php/Signup.php" method="post">
 				<input placeholder="USERNAME" name="Name" type="text" required="" />
 				<span class="icons i3"><i class="fa fa-user" aria-hidden="true"></i></span>
 				<input placeholder="E-MAIL" name="Email" type="email" required="" />
 				<span class="icons i4"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
 				<input placeholder="PASSWORD" name="Password" type="password" required="" />
 				<span class="icons i5"><i class="fa fa-key" aria-hidden="true"></i></span>
-				<input placeholder="CONFIRM PASSWORD" name="Password" type="password" required="" />
+				<input placeholder="CONFIRM PASSWORD" name="ConfirmPassword" type="password" required="" />
 				<span class="icons i6"><i class="fa fa-key" aria-hidden="true"></i></span>
 					<input type="submit" value="Sign UP" name="login">
 			</form>
