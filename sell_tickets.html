@@ -8,9 +8,39 @@
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
       <link href="css/style.css" rel="stylesheet">
+      <script>
+          function getPara(){
+              var id = getParameterByName('user_id');
+              var msg = getParameterByName('msg');
+              if(id == null){
+                  alert('You need to log in first.');
+                  window.location = 'sign_up/signup.html';
+              }
+              else{
+                  if(msg == 'error'){
+                      alert('Error posting the ticket.');
+                  }
+                  else if(msg == 'success'){
+                      alert('Your tickets has been posted successfully.');
+                  }
+              }
+          }
+
+          function getParameterByName(name, url) {
+              if (!url) {
+                url = window.location.href;
+              }
+              name = name.replace(/[\[\]]/g, "\\$&");
+              var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                  results = regex.exec(url);
+              if (!results) return null;
+              if (!results[2]) return '';
+              return decodeURIComponent(results[2].replace(/\+/g, " "));
+          }
+      </script>
 
     </head>
-    <body class="sell_events">
+    <body class="sell_events" onload="getPara()">
       <div id="mySidenav" class="sidenav">
         <a href="index.html" id="Home">Home</a>
         <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
@@ -32,8 +62,8 @@
                     </script>
                     <input placeholder="TICKET NAME" name="Name" type="text" required="" /><br>
                     <input placeholder="TICKET DETAIL" name="Detail" type="text" required="" /><br>
-                    <input placeholder="QUANTITY" name="Quantity" type="number" required="" /><br>
-                    <input placeholder="PRICE" name="Price" type="number" required="" /><br>
+                    <input placeholder="QUANTITY" name="Quantity" type="number" min="0" required="" /><br>
+                    <input placeholder="PRICE" name="Price" type="number" min="0" step="0.01" required="" /><br>
                     <input placeholder="ADDRESS" name="Address" type="text" required="" /><br>
                     <input type='submit' value='POST TICKET'>
                 </form>
