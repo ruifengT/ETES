@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
+<script src = "js/distance_matrix.js"></script>
+
 </head>
 
 <body id="checkout-page">
@@ -43,7 +45,13 @@
 		 	<h2>Your Data</h2>
 		 	<div id="user-details-content"></div>
 		 </div>
-
+        <div id="ETA">
+            <h2>Ticket ETA</h2>
+            <div id="travel"></div>
+            <div id ="travel_time"></div>
+            <div id="map"></div>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXGNV-ePwHL5zOlxry9z8OEyNrIQHUAe0&callback=initMap"></script>
+        </div>
 
 
 
