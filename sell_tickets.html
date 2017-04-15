@@ -38,20 +38,19 @@
               if (!results[2]) return '';
               return decodeURIComponent(results[2].replace(/\+/g, " "));
           }
+              function gotosell(){
+        window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
+    }
       </script>
 
     </head>
-    <body class="sell_events" onload="getPara()">
+    <body onload="getPara()">
 
-      <!--Thiis is the slide menu-->
-      <div id="mySidenav" class="sidenav">
-        <a href="index.html" id="Home">Home</a>
-        <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
-        <a href="myTickets.html" id="myTickets">My Tickets</a>
-        <a href="contact.php" id="Contact">Contact</a>
-      </div>
-      <!--end of slide menu-->
-
+<div class="topnav" id="myTopnav">
+  <a href="contact.php">Contact Us</a>
+  <a href="sign_up/signup.html">Sign In</a>
+  <a href="index.html">Home</a>
+</div>
 
       <div class="text-center">
         <div class="container" id="buy">
@@ -60,18 +59,20 @@
 
             <div class="col-md-12">
 
+                <p><form><input type="search" name="search" placeholder="Search for tickets"></form></p><br />
+                <p></p>
                 <form action="php/Postticket.php" method="post">
                     <input placeholder="User ID" id="user_id" name="ID" type="text" required="" /><br>
                     <script type="text/javascript">
                     var id = document.getElementById("user_id");
                     id.value = getParameterByName('user_id');
                     </script>
-                    <input placeholder="TICKET NAME" name="Name" type="text" required="" /><br>
-                    <input placeholder="TICKET DETAIL" name="Detail" type="text" required="" /><br>
-                    <input placeholder="QUANTITY" name="Quantity" type="number" min="0" required="" /><br>
-                    <input placeholder="PRICE" name="Price" type="number" min="0" step="0.01" required="" /><br>
-                    <input placeholder="ADDRESS" name="Address" type="text" required="" /><br>
-                    <input type='submit' value='POST TICKET'>
+                    <input placeholder="Ticket Name" name="Name" type="text" required="" /><br>
+                    <input placeholder="Ticket Details" name="Detail" type="text" required="" /><br>
+                    <input placeholder="Quantity" name="Quantity" type="number" min="0" required="" /><br>
+                    <input placeholder="Price" name="Price" type="number" min="0" step="0.01" required="" /><br>
+                    <input placeholder="Address" name="Address" type="text" required="" /><br>
+                    <input type='submit' value='Post Ticket'>
                 </form>
                 <p></p>
 
@@ -93,9 +94,6 @@
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
 
 
-                <form><input type="search" name="search" placeholder="Search for tickets"></form>
-                <p></p>
-
             </div>
 
           </div>
@@ -115,13 +113,6 @@
       <script type="text/javascript" src="js/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="js/bootstrap.min.js"></script>
-      <script type="text/javascript">
-
-        $('.carousel').carousel({
-          interval: 3500, // in milliseconds
-          pause: 'none' // set to 'true' to pause slider on mouse hover
-        })
-      </script>
       <script src="js/signup.js"></script>
     </body>
 </html>

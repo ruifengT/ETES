@@ -3,8 +3,43 @@
 <head>
 <title> ETES - Online Shopping Cart </title>
 <meta charset="utf-8" />
+          <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-</head>
+</head><div class="topnav" id="myTopnav">
+  <a href="../contact.php">Contact Us</a>
+  <a href="../sign_up/signup.html">Sign In</a>
+  <a href="../userdashboard.html">Sell Tickets</a>
+  <a href="../index.html">Home</a>
+</div><style>/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #ffaa00;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: right;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Roboto';
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #33cccc;
+    color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #6dc5b5;
+    color: white;
+          }
+</style>
 <body>
 
 <div id="site">

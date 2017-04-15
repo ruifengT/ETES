@@ -11,13 +11,15 @@
 
     </head>
     <body class="three-blocks">
-
-      <div id="mySidenav" class="sidenav">
-        <a href="index.html" id="Home">Home</a>
-        <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
-        <a href="userdashboard.html" id="myTickets">My Tickets</a>
-        <a href="contact.php" id="Contact">Contact</a>
-      </div>
+        
+<!-- displays backwards due to css -->
+<div class="topnav" id="myTopnav">
+    
+  <a href="contact.php">Contact Us</a>
+  <a href="sign_up/signup.html">Sign In</a>
+  <a href="userdashboard.html">Sell Tickets</a>
+    <a href="index.html">Home</a>
+</div>
 
 
       <div class="text-center">
@@ -26,17 +28,17 @@
 
 
             <div class="col-md-12">
-              <img src="images/sp-tickets-600x393.png" alt="image" class="img-rounded img-responsive" height="25%" width="25%">
-              <h3>[ Sports | Concerts| Theater | Comedy ]<br/> Your one-stop destination for tickets.</h3>
+              <img src="images/ticket.png" alt="image" class="img-rounded img-responsive" height="25%" width="25%">
+              <h3>[ Sports | Concerts | Theater | Comedy ]<br/> Your one-stop destination for tickets.</h3>
 
               <br>
-
+                <form action='ShoppingCart/index.html' metho='POST'>
+                    <input type="search" name="search" placeholder="Search for tickets"></form> <p></p>
               <p><a class="btn btn-default btn-lg" href="ShoppingCart/index.html" role="button">Buy Now</a><a class="btn btn-default btn-lg" href="sign_up/signup.html" role="button">Register</a></p>
 
 
 
-                <form action='ShoppingCart/index.html' metho='POST'>
-                    <input type="search" name="search" placeholder="Search for tickets"></form>
+                
                 <p></p>
 
 

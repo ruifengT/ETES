@@ -17,6 +17,11 @@
 <script>
     function getData(){
         var id = getParameterByName('user_id');
+        var msg = getParameterByName('msg');
+        if(id == null){
+            alert('You need to log in first.');
+            window.location = 'sign_up/signup.html';
+        }
         /*var obj;
         $.ajax({
             url: 'php/UserDashboard.php',
@@ -82,12 +87,11 @@
     }
 </script>
 <body onload="getData()">
-      <div id="mySidenav" class="sidenav">
-        <a href="index.html" id="Home">Home</a>
-        <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
-        <a href="myTickets.html" id="myTickets">My Tickets</a>
-        <a href="contact.php" id="Contact">Contact</a>
-      </div>
+<div class="topnav" id="myTopnav">
+  <a href="contact.php">Contact Us</a>
+  <a onclick="gotosell()">Sell Tickets</a>
+  <a href="index.html">Home</a>
+</div>
     
     
       <div class="text-center">
