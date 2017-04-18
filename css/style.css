@@ -1,52 +1,42 @@
 /*
 Custom Styles. Bootstrap Styles are default'
+#594F4F - light green
+#547980 - green
+#45ada8 - blue green
+#9DE0AD - blue
+#e5fcc2 - brown
 */
 * {
 }
 
-
-
-
-/* Style the links inside the sidenav */
-#mySidenav a {
-    position: absolute; /* Position them relative to the browser window */
-    left: -80px; /* Position them outside of the screen */
-    transition: 0.3s; /* Add transition on hover */
-    padding: 15px; /* 15px padding */
-    width: 100px; /* Set a specific width */
-    text-decoration: none; /* Remove underline */
-    font-size: 12px; /* Increase font size */
-
-    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+.topnav {
+    background-color: #45ada8;
+    overflow: hidden;
 }
 
-#mySidenav a:hover {
-    left: 0; /* On mouse-over, make the elements appear as they should */
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: right;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Roboto';
 }
 
-/* The about link: 20px from the top with a green background */
-#Home {
-    top: 20px;
-    background-color: #F4A51A;
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #547980;
+    color: white;
 }
 
-#findEvents{
-    top: 80px;
-    background-color: #F4A51A;
-}
-
-#myTickets {
-    top: 140px;
-    background-color: #F4A51A;
-}
-
-#Contact {
-    top: 200px;
-    background-color: #F4A51A;
-}
-
-
-
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #45ada8;
+    color: white;
+          }
 /*Header*/
 header {
 	background: url('../images/big_line_bg.jpg') no-repeat;
@@ -400,7 +390,7 @@ ul.dropdown-menu>li>a:hover {
 	-moz-border-radius: 0px;
 	-ms-border-radius: 0px;
 	-o-border-radius: 0px;
-	background-color: #6dc5b5;
+	background-color: #547980;
 	border-color: #6dc5b5;
 }
 .btn-primary:hover, .btn-primary:focus {
@@ -440,13 +430,14 @@ ul.dropdown-menu>li>a:hover {
 	background: none;
 }
 .btn-default:hover, .btn-default:focus {
-	background-color: #6dc5b5;
-	border-color: #6dc5b5;
-	color: #fff;
+	background-color: #547980;
+	border-color: #547980;
+	color: #e5fcc2;
 }
 button.btn-primary:focus, .btn-default:focus, .btn-info:focus {
 	outline: none;
 }
+
 .btn-lg {
 	width: 160px;
 	height: 50px;
@@ -456,6 +447,7 @@ button.btn-primary:focus, .btn-default:focus, .btn-info:focus {
 	text-transform: uppercase;
 	font-family: "Roboto", serif;
 	color: #fff !important;
+    background-color: #45ada8;
 }
 footer .btn.btn-primary {
 	color: #fff;
@@ -536,8 +528,16 @@ footer .btn.btn-primary {
 	line-height: 36px;
 }
 .three-blocks {
-	background: url('../images/upcoming_events.jpg') no-repeat;
-	background-size: cover;
+	background: #e5fcc2; /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* Standard syntax */
+  background: linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+    background-size: cover;
 }
 
 .bg_events {
@@ -1288,10 +1288,6 @@ h4 {
 
 
 
-
-
-
-
 input[type="search"] {
     width: 200px;
     box-sizing: border-box;
@@ -1309,4 +1305,20 @@ input[type="search"] {
 
 input[type="search"]:focus {
     width: 75%;
+}
+
+input[type=text], input[type=number] {
+    width: 35%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #45ada8;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }

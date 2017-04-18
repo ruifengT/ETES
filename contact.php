@@ -51,7 +51,9 @@ if(isset($_POST['submit']))
     
     mail($to, $subject, $body,$headers);
     
-    header('Location: thank-you.html');
+    echo '<script language="javascript">';
+      echo 'alert("Thanks for the submission!")';
+      echo '</script>';
   }
 }
 
@@ -84,7 +86,9 @@ function IsInjected($str)
 <!DOCTYPE html>
   <html>
     <head>
-      <title>ETES - My Contact US</title>
+                <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
+
+      <title>ETES - Contact Us</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -109,13 +113,13 @@ function IsInjected($str)
       </style>  
       <script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>  
     </head>
-    <body class="sport_events">
-      <div id="mySidenav" class="sidenav">
-        <a href="index.html" id="Home">Home</a>
-        <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
-        <a href="myTickets.html" id="myTickets">My Tickets</a>
-        <a href="contact.html" id="Contact">Contact</a>
-      </div>
+    <body class="three-blocks">
+<div class="topnav" id="myTopnav">
+  <a href="contact.php">Contact Us</a>
+  <a href="sign_up/signup.html">Sign In</a>
+    <a href="shoppingcart/index.html">Buy Tickets</a>
+    <a href="index.html">Home</a>
+</div>
 
  
 

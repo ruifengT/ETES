@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>ETES - Dashboard</title>
-
+        <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
 
       <!-- Bootstrap -->
       <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +17,11 @@
 <script>
     function getData(){
         var id = getParameterByName('user_id');
+        var msg = getParameterByName('msg');
+        if(id == null){
+            alert('You need to log in first.');
+            window.location = 'sign_up/signup.html';
+        }
         /*var obj;
         $.ajax({
             url: 'php/UserDashboard.php',
@@ -36,7 +41,7 @@
                 myObj = JSON.parse(this.responseText);
                 txt += "<p>"
                 for (x in myObj) {
-                    txt += "User ID: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Username: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Credit Card Number: "+myObj[x].user_creditcard +" <br>Account Date Created: "+myObj[x].user_create_stmp;
+                    txt += "User ID: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Name: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Credit Card Number: "+myObj[x].user_creditcard +" <br>Account Date Created: "+myObj[x].user_create_stmp;
                 }
                 txt += "</p>"
                 document.getElementById("output").innerHTML = txt;
@@ -82,12 +87,12 @@
     }
 </script>
 <body onload="getData()">
-      <div id="mySidenav" class="sidenav">
-        <a href="index.html" id="Home">Home</a>
-        <a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
-        <a href="myTickets.html" id="myTickets">My Tickets</a>
-        <a href="contact.php" id="Contact">Contact</a>
-      </div>
+<div class="topnav" id="myTopnav">
+  <a href="contact.php">Contact Us</a>
+  <a onclick="gotosell()">Sell Tickets</a>
+  <a href="shoppingcart/index.html">Buy Tickets</a>
+  <a href="index.html">Home</a>
+</div>
     
     
       <div class="text-center">
@@ -97,9 +102,6 @@
 
     <h1>User Dashboard</h1>
     <div id="output"></div>
-    <button>Edit Profile</button><button onclick="gotosell()">Sell Tickets</button></p>
-<!--<button class="reveal" href="sell_tickets.html?user_id=" target="page">Sell Ticket</button></p>
-    <div class="page"></div> -->
     <h2>My Tickets</h2>
               <div id="tickets">You don't have any tickets. Why not try listing some?</div>
               
@@ -109,15 +111,3 @@
 </body>
     
 </html>
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-
-    $('.reveal').on('click', function(e){
-        e.preventDefault();
-        var link = $(this).attr('href');
-        $('.page').load(link);
-    });
-
-});
-</script>-->
