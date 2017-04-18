@@ -115,8 +115,8 @@ function IsInjected($str)
 <div class="topnav" id="myTopnav">
   <a href="contact.php">Contact Us</a>
   <a href="sign_up/signup.html">Sign In</a>
-  <a href="userdashboard.html">Sell Tickets</a>
-  <a href="index.html">Home</a>
+    <a href="shoppingcart/index.html">Buy Tickets</a>
+    <a href="index.html">Home</a>
 </div>
 
  

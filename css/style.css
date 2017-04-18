@@ -1314,7 +1314,7 @@ input[type=text], input[type=number] {
     box-sizing: border-box;
 }
 input[type=button], input[type=submit], input[type=reset] {
-    background-color: #4CAF50;
+    background-color: #45ada8;
     border: none;
     color: white;
     padding: 16px 32px;
