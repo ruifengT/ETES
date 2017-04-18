@@ -6,36 +6,10 @@
             <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
 
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'></head></head>
-    <style>
-.topnav {
-    background-color: #45ada8;
-    overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: right;
-    display: block;
-    color: white;
-    text-align: right;
-    padding: 10px 25px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: 'Roboto';
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #547980;
-    color: white;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #45ada8;
-    color: white;
-          }</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.shop.js"></script>
+<script type="text/javascript" src = "js/distance_matrix.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 <body>
 <div class="topnav" id="myTopnav">
   <a href="../contact.php">Contact Us</a>
@@ -50,12 +24,10 @@
 	<div id="content">
 		<div id="products">
 		<ul>
-            
 		<?php
 		require "../php/Config.php";
 		$sql = "SELECT ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_pickup_address FROM tickets";
 		$result = mysqli_query($conn, $sql);
-
 		while ($row = mysqli_fetch_assoc($result)){
 			$ticket_id = $row['ticket_id'];
 			$ticket_name = $row['ticket_name'];
@@ -63,14 +35,12 @@
 			$ticket_quantity = $row['ticket_quantity'];
 			$ticket_price = $row['ticket_price'];
 			$ticket_pickup_address = $row['ticket_pickup_address'];
-
 			?> 
 			<!-- 	break then parse information -->
 			<!-- HTML Information To Populate Blobs-->
 			<!-- should only be able to buy one ticket at a time -->
-
-            <li>
-            <div class="product-description">
+			<li>
+				<div class="product-description" data-name="<?php echo $ticket_name?>" data-price="<?php echo $ticket_price?>">
 					<h4 class="product-name"> <?php echo $ticket_name?> </h4>
 					<h5> <?php echo $ticket_detail?> </h5>
 					<h6> <?php echo $ticket_pickup_address?> </h6>
@@ -82,16 +52,14 @@
 						</div>
 						<p><input type="submit" value="Add to cart" class="btn"/></p>
 					</form>
-			
-                </div> 
+				</div>
+			</li>
 			<?php
-            } 
-                ?>
-           </li>
+			} // ending while loop
+			?>
+
 			</ul>
-        </div>
-			
-		
+		</div>
 	</div>
 </div>
 </body>
