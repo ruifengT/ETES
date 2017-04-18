@@ -32,12 +32,12 @@
 			<!-- HTML Information To Populate Blobs-->
 			<!-- should only be able to buy one ticket at a time -->
 			<li>
-				<div class="product-description" data-name="Ticket_dets" data-price="20">
+				<div class="product-description">
 					<h4 class="product-name"> <?php echo $ticket_name?> </h4>
 					<h5> <?php echo $ticket_detail?> </h5>
 					<h6> <?php echo $ticket_pickup_address?> </h6>
 					<p class="product-price">&dollar;<?php echo $ticket_price?></p>
-					<form class="add-to-cart" action="checkout.html?ticket_id=<?php echo $ticket_id ?>?ticket_address=<?php echo $ticket_pickup_address ?>" method="post">
+					<form class="add-to-cart" action="cart.html?ticket_id=<?php echo $ticket_id ?>?ticket_address=<?php echo $ticket_pickup_address ?>" method="post">
 						<div>
 						<label for="qty-1">Quantity</label>
 						<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
