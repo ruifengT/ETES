@@ -50,6 +50,7 @@
 	<div id="content">
 		<div id="products">
 		<ul>
+            
 		<?php
 		require "../php/Config.php";
 		$sql = "SELECT ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_pickup_address FROM tickets";
@@ -67,8 +68,9 @@
 			<!-- 	break then parse information -->
 			<!-- HTML Information To Populate Blobs-->
 			<!-- should only be able to buy one ticket at a time -->
-			<li>
-				<div class="product-description">
+
+            <li>
+            <div class="product-description">
 					<h4 class="product-name"> <?php echo $ticket_name?> </h4>
 					<h5> <?php echo $ticket_detail?> </h5>
 					<h6> <?php echo $ticket_pickup_address?> </h6>
@@ -80,14 +82,16 @@
 						</div>
 						<p><input type="submit" value="Add to cart" class="btn"/></p>
 					</form>
-				</div>
-			</li>
+			
+                </div> 
 			<?php
-			} // ending while loop
-			?>
-
+            } 
+                ?>
+           </li>
 			</ul>
-		</div>
+        </div>
+			
+		
 	</div>
 </div>
 </body>
