@@ -111,7 +111,7 @@ function IsInjected($str)
       </style>  
       <script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>  
     </head>
-    <body class="sport_events">
+    <body class="three-blocks">
 <div class="topnav" id="myTopnav">
   <a href="contact.php">Contact Us</a>
   <a href="sign_up/signup.html">Sign In</a>

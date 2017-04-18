@@ -18,7 +18,7 @@ Custom Styles. Bootstrap Styles are default'
 .topnav a {
     float: right;
     display: block;
-    color: #e5fcc2;
+    color: white;
     text-align: right;
     padding: 10px 25px;
     text-decoration: none;
@@ -528,8 +528,16 @@ footer .btn.btn-primary {
 	line-height: 36px;
 }
 .three-blocks {
-	background-color: #9DE0AD;
-	background-size: cover;
+	background: #e5fcc2; /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* Standard syntax */
+  background: linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+    background-size: cover;
 }
 
 .bg_events {
@@ -1297,4 +1305,20 @@ input[type="search"] {
 
 input[type="search"]:focus {
     width: 75%;
+}
+
+input[type=text], input[type=number] {
+    width: 35%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
 }

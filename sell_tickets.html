@@ -38,8 +38,8 @@
               if (!results[2]) return '';
               return decodeURIComponent(results[2].replace(/\+/g, " "));
           }
-              function gotosell(){
-        window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
+              function gotodash(){
+        window.location = 'userdashboard.html?user_id=' + getParameterByName('user_id');
     }
       </script>
 
@@ -48,7 +48,7 @@
 
 <div class="topnav" id="myTopnav">
   <a href="contact.php">Contact Us</a>
-  <a href="sign_up/signup.html">Sign In</a>
+  <a onclick="gotodash()">Dashboard</a>
   <a href="index.html">Home</a>
 </div>
 
