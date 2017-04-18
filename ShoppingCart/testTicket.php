@@ -12,7 +12,7 @@
   <a href="../index.html">Home</a>
 </div><style>/* Add a black background color to the top navigation */
 .topnav {
-    background-color: #ffaa00;
+    background-color: #45ada8;
     overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
 .topnav a {
     float: right;
     display: block;
-    color: #f2f2f2;
+    color: white;
     text-align: right;
     padding: 10px 25px;
     text-decoration: none;
@@ -30,13 +30,13 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-    background-color: #33cccc;
+    background-color: #547980;
     color: white;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #6dc5b5;
+    background-color: #45ada8;
     color: white;
           }
 </style>

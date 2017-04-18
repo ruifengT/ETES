@@ -29,14 +29,20 @@ img{max-width:100%;}
 /*end reset*/
 
 body p,h1,h2,h3,h4,h5,h6,a{
-	font-family: 'Play', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 body {
-    background: url('../images/concert_bg.jpg') no-repeat;
+	background: #e5fcc2; /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
+  /* Standard syntax */
+  background: linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
     background-size: cover;
-	text-align:center;
-	background-position: center;
-    background-attachment: fixed;
+
 }
 /*--header--*/
 .agileheader h1 {
@@ -46,7 +52,7 @@ body {
     color: #fff;
     font-weight: 100;
     margin: 54px 0px;
-    font-family: 'Play', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .w3layouts-main h2, .w3layouts-main2 h3 {
 	color: #fff;
@@ -54,7 +60,7 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     padding-bottom: 15px;
-	font-family: 'Play', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 .main-w3l {
     width: 61%;
@@ -84,11 +90,12 @@ input[type="text"], input[type="email"], input[type="password"]{
     padding: 15px 0px 15px 42px;
     outline: none;
     font-size: 14px;
-    color: #fff;
+    color: #fff !important;
     margin: 14px 0px;
-    font-family: 'Play', sans-serif;
+    font-family: 'Roboto', sans-serif;
     border: none;
     border-bottom: 1px solid #fff;
+    opacity:80%;
 	background: transparent;
 }
 .w3layouts-main h6 {
@@ -98,7 +105,7 @@ input[type="text"], input[type="email"], input[type="password"]{
 	margin-top: 8px;
 	text-align: center;
 	text-decoration:underline;
-	font-family: 'Play', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 .w3layouts-main h3 {
     font-size: 0.9em;
@@ -118,12 +125,12 @@ input[type="submit"] {
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    background: #ed7902;
+    background: #45ada8;
     color: white;
     border: none;
     outline: none;
     cursor: pointer;
-    font-family: 'Play', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin:24px auto ;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
@@ -135,7 +142,7 @@ input[type="submit"] {
     margin: 27px auto 31px;
 }
 input[type="submit"]:hover {
-	background:rgba(213, 38, 133, 0.64);
+	background:#547980;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-o-transition:0.5s all;
@@ -252,11 +259,11 @@ a.icon.gp {
     font-size: 15px;
     font-weight: 300;
     letter-spacing: 2px;
-	font-family: 'Play', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 .footer-w3l a {
     color:#ed7902;
-	font-family: 'Play', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 .footer-w3l a:hover {
     color:rgba(208, 95, 216, 0.9);
