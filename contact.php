@@ -86,6 +86,8 @@ function IsInjected($str)
 <!DOCTYPE html>
   <html>
     <head>
+                <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
+
       <title>ETES - Contact Us</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Bootstrap -->

@@ -3,6 +3,8 @@
 <head>
 <title> ETES - Online Shopping Cart </title>
 <meta charset="utf-8" />
+            <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
+
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'></head></head>
     <style>
