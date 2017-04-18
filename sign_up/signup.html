@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Welcome to Ticket Boosters</title>
+<title>ETES - Sign In</title>
 
 
 
@@ -17,52 +17,44 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Meta tag Keywords -->
 
 <!-- css files -->
+    <link href="css/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
-<!-- //css files -->
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <!-- //css files -->
 
 <!-- online-fonts -->
 <link href="//fonts.googleapis.com/css?family=Play:400,700&amp;subset=cyrillic,cyrillic-ext,greek,latin-ext" rel="stylesheet">
 <!--//online-fonts -->
 <link href="css/style.css" rel="stylesheet">
 <style>
-#mySidenav a {
-    position: absolute; /* Position them relative to the browser window */
-    left: -100px; /* Position them outside of the screen */
-    transition: 0.3s; /* Add transition on hover */
-    padding: 15px; /* 15px padding */
-    width: 100px; /* Set a specific width */
-    text-decoration: none; /* Remove underline */
-    font-size: 12px; /* Increase font size */
-		color:white;
-    border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+.topnav {
+    background-color: #45ada8;
+    overflow: hidden;
 }
 
-#mySidenav a:hover {
-    left: 0; /* On mouse-over, make the elements appear as they should */
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: right;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Roboto';
 }
 
-/* The about link: 20px from the top with a green background */
-#Home {
-    top: 20px;
-    background-color: #F4A51A  ;
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #547980;
+    color: white;
 }
 
-#findEvents{
-    top: 80px;
-    background-color: #F4A51A ;
-}
-
-#myTickets {
-    top: 140px;
-    background-color: #F4A51A;
-}
-
-#Contact {
-    top: 200px;
-    background-color: #F4A51A;
-}
-
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #45ada8;
+    color: white;
+          }
 
 </style>
 <script>
@@ -100,20 +92,19 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 </head>
 
 
-<body onload='getError()'>
+<body class="three-blocks" onload='getError()'>
 
-	<div id="mySidenav" class="sidenav">
-		<a href="../index.html" id="Home">Home</a>
-		<a href="sell_tickets.html" id="findEvents">Sell Tickets</a>
-		<a href="../userdashboard.html" id="myTickets">My Tickets</a>
-		<a href="../contact.php" id="Contact">Contact</a>
-	</div>
+<div class="topnav" id="myTopnav">
+  <a href="../contact.php">Contact Us</a>
+  <a href="../userdashboard.html">Sell Tickets</a>
+  <a href="../index.html">Home</a>
+</div>
 
 
 
 <!--header-->
 <div class="agileheader">
-	<h1>Welcome to ETES</h1>
+	<h1 style="text-align:center;">Welcome to ETES</h1>
 </div>
 <!--//header-->
 
@@ -130,7 +121,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</form>
 			<h6><a href="#">Forgot Password?</a></h6>
 
-			<h3>(or)</h3>
+			<h3 style="text-align:center">(or)</h2>
 			<div class="fb-login-button" data-max-rows="1" data-size="icon" data-show-faces="false" data-auto-logout-link="false"></div>
 			<div class="social_icons agileinfo">
 				<div class="social">
