@@ -527,7 +527,8 @@ footer .btn.btn-primary {
 	font-size: 36px;
 	line-height: 36px;
 }
-.three-blocks {
+html, body, .three-blocks {
+    min-height: 100%;
 	background: #e5fcc2; /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   background: -webkit-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);

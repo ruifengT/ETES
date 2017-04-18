@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
+<script type="text/javascript" src="../js/shopping_cart.js"></script>
 <script type="text/javascript" src = "js/distance_matrix.js"></script>
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 <body>
