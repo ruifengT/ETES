@@ -97,6 +97,15 @@ input[type="text"], input[type="email"], input[type="password"]{
     border-bottom: 1px solid #fff;
     opacity:80%;
 	background: transparent;
+    
+    
+}
+::-moz-placeholder {
+    opacity: 1;
+    }
+input::placeholder {
+    color: white;
+    opacity: 75%;
 }
 .w3layouts-main h6 {
     font-size: 16px;
