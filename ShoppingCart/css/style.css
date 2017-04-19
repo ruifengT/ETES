@@ -11,7 +11,7 @@
 .topnav a {
     float: right;
     display: block;
-    color: white;
+    color: white !important;
     text-align: right;
     padding: 10px 25px;
     text-decoration: none;
@@ -88,12 +88,12 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	font-size: 3.5em;
 	overflow: hidden;
-	padding-left: 85px;
+	padding-left: 140px;
 	min-height: 82px;
-	line-height: 2.3;
-	background: url(../images/logo.png) no-repeat 0 50%;
-	color: #900;
-
+	line-height: 2;
+	background: url(../../images/ticket.png) no-repeat 0 50%;
+    background-size: 140px 100px;
+	color: #547980;
 }
 
 .tagline {
@@ -129,20 +129,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-description {
 	padding: 1em;
-	background: #000;
+	background: #594F4F;
 	color: #fff;
 	border-radius: 5px;
-    margin: 0 auto 1em auto;
+    margin: 0 .2em 1em auto;
     width: 250px;
-	height: 425px;
+	height: 400px;
 }
 
 .product-name {
 	text-align: center;
-	color: #fc0;
+	color: #45ada8;
 	margin: 0;
 	font-size: 1.4em;
-	padding-bottom: 0.2em;
+	padding-bottom: 0em;
 	border-bottom: 1px dotted #666;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 	margin: 1em auto;
 	background: #fff;
-	color: #800;
+	color: #594F4F;
 	line-height: 4;
 	border-radius: 50%;
 }
