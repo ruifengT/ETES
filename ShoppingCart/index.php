@@ -27,7 +27,11 @@
 		<ul>
 		<?php
 		require "../php/Config.php";
-		$sql = "SELECT ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_pickup_address FROM tickets";
+        $sql = "SELECT distinct ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_pickup_address FROM tickets";
+        if(!empty($_GET['search'])){
+            $keyword = $_GET['search'];
+            $sql .= " where ticket_name like '%" . $keyword . "%' or ticket_detail like '%" . $keyword . "%'";
+        }
 		$result = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($result)){
 			$ticket_id = $row['ticket_id'];
@@ -36,7 +40,7 @@
 			$ticket_quantity = $row['ticket_quantity'];
 			$ticket_price = $row['ticket_price'];
 			$ticket_pickup_address = $row['ticket_pickup_address'];
-			?> 
+			?>
 			<!-- 	break then parse information -->
 			<!-- HTML Information To Populate Blobs-->
 			<!-- should only be able to buy one ticket at a time -->
