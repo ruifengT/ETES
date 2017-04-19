@@ -138,7 +138,7 @@ input[type="submit"] {
     outline: none;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
-    margin:20px auto ;
+    margin: 1em auto ;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -148,7 +148,7 @@ input[type="submit"] {
     display:block;
 }
 .w3layouts-main2 input[type="submit"] {
-    margin: 27px auto 31px;
+    margin: 1em auto 30px;
 }
 input[type="submit"]:hover {
 	background:#547980;
@@ -164,10 +164,10 @@ span.icons {
     position: absolute;
 }
 span.icons.i1 {
-    top: 23%;
+    top: 24%;
 }
 span.icons.i2 {
-    top: 37%;
+    top: 35%;
 }
 .i1, .i2{
 	left: 5%;
@@ -176,13 +176,13 @@ span.icons.i3 {
     top: 23%;
 }
 span.icons.i4{
-    top: 37.7%;
+    top: 35%;
 }
 span.icons.i5 {
-    top: 52%;
+    top: 47%;
 }
 span.icons.i6 {
-    top: 67%;
+    top: 57%;
 }
 .i3, .i4, .i5, .i6{
 	left: 57.8%;
