@@ -1,4 +1,4 @@
-# ![alt text](https://github.com/ruifengT/etes/raw/master/images/ticket.png "Ticket Logo") Electronic Ticket Exchange Service
+# ![alt text](https://github.com/ruifengT/etes/raw/master/images/tix.png "Ticket Logo") Electronic Ticket Exchange Service
 ETES (Electronic Ticket Exchange Service) is a ticket exchanging website similar to competitors StubHub and TicketMaster. This website allows for users to buy and sell their tickets in conjunction with major ticket sellers, such as the venues near San Jose and events they host. The website allows users to sell their tickets straight from their account. Tickets sold by users will be verified by ETES. Within one hour, ticket sold by a third-party seller on ETES will either be delivered by a person, or by mail.  For this project, we will provide real data in a fully functional website.
 
 ## User Guide
@@ -6,7 +6,7 @@ ETES is used locally. This section will teach you how to install the required lo
 ### Requirements
 - Windows, iOS, or Linux Operating System
 - [XAMPP](https://www.apachefriends.org/download.html) Downloaded
-⋅⋅⋅ Preferably download XAMPP 7.1.1 / PHP 7.1.1
+++ Download XAMPP 7.1.1 / PHP 7.1.1
 - Browsers: Google Chrome, Mozilla Firefox, Safari, Internet Explorer
 - Downloaded GitHub files
 
