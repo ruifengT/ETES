@@ -15,7 +15,6 @@
 <div class="topnav" id="myTopnav">
   <a href="../contact.php">Contact Us</a>
   <a href="../sign_up/signup.html">Sign In</a>
-  <a href="index.php">Buy Tickets</a>
   <a href="../index.html">Home</a>
 </div>
 <div id="site">
@@ -27,11 +26,16 @@
 		<ul>
 		<?php
 		require "../php/Config.php";
+
+		// getting current user's id
+		$id = $_GET['user_id'];
+
         $sql = "SELECT distinct ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_pickup_address FROM tickets";
         if(!empty($_GET['search'])){
             $keyword = $_GET['search'];
             $sql .= " where ticket_name like '%" . $keyword . "%' or ticket_detail like '%" . $keyword . "%'";
         }
+
 		$result = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($result)){
 			$ticket_id = $row['ticket_id'];
@@ -50,7 +54,8 @@
 					<h5> <?php echo $ticket_detail?> </h5>
 					<h6> <?php echo $ticket_pickup_address?> </h6>
 					<p class="product-price">&dollar;<?php echo $ticket_price?></p>
-					<form class="add-to-cart" action="cart.html?ticket_id=<?php echo $ticket_id ?>?ticket_address=<?php echo $ticket_pickup_address ?>" method="post">
+					<form class="add-to-cart" action="cart.html?ticket_id=<?php echo $ticket_id ?>?currentUser=<?php echo $id ?>" method="post">
+					<!-- Remove Echo from formClass for user ID -->
 						<div>
 						<label for="qty-1">Quantity</label>
 						<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
