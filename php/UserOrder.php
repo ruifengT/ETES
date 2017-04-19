@@ -3,7 +3,7 @@ require "Config.php";
 
 $user_id = $_POST['user_id'];
 
-$sql = "select * from logins, users where logins.login_user_id = users.user_id and users.user_id = '" . $user_id . "'";
+$sql = "SELECT * FROM `orders` WHERE `order_buy_user_id` = '" . $user_id . "' or `order_sell_user_id` = '" . $user_id . "'";
 
 $result = mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($result)){

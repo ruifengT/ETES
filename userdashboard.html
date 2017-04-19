@@ -47,11 +47,10 @@
                 document.getElementById("output").innerHTML = txt;
             }
         };
-        xmlhttp.open("POST", "php/UserDashboard.php?user_id=" + id, true);
+        xmlhttp.open("POST", "php/UserDashboard.php", true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("user_id=" + id);
-        
-        var tix = getParameterByName('ticket_postedby');
+
         var obj, dbParam, xmlhttp, myObj, x, foo = "";
         obj = { "table":"tickets", "limit":20 };
         dbParam = JSON.stringify(obj);
@@ -67,7 +66,29 @@
                 document.getElementById("tickets").innerHTML = foo;
             }
         };
-        xmlhttp.open("POST", "php/tickets.php?ticket_postedby=" + id, true);
+        xmlhttp.open("POST", "php/tickets.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("ticket_postedby=" + id);
+
+    }
+    function getOrder(){
+        var id = getParameterByName('user_id');
+        var obj, dbParam, xmlhttp, myObj, x, foo = "";
+        obj = { "table":"orders", "limit":20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                foo += "<p>"
+                for (x in myObj) {
+                    foo += "Order ID: "+myObj[x].order_id+" <br>Order Buyer: "+myObj[x].order_buy_user_id+" <br>Order Seller: "+myObj[x].order_sell_user_id+" <br>Ticket Id: "+myObj[x].order_ticket_id+" <br>Ticket Quantity: "+myObj[x].order_ticket_quantity+" <br>Total Price: "+myObj[x].order_price+"<br>Order Time stamp: "+myObj[x].order_stmp+"<br><br>";
+                }
+                foo += "</p>"
+                document.getElementById("orders").innerHTML = foo;
+            }
+        };
+        xmlhttp.open("POST", "php/UserOrder.php", true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("user_id=" + id);
     }
@@ -86,28 +107,32 @@
         window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
     }
 </script>
-<body onload="getData()">
+<body onload="getData(); getOrder();">
 <div class="topnav" id="myTopnav">
   <a href="contact.php">Contact Us</a>
   <a onclick="gotosell()">Sell Tickets</a>
   <a href="shoppingcart/index.php">Buy Tickets</a>
   <a href="index.html">Home</a>
 </div>
-    
-    
-      <div class="text-center">
-        <div class="container" id="buy">
-          <div class="row">
-            <div class="col-md-12">
 
-    <h1>User Dashboard</h1>
-    <div id="output"></div>
-    <h2>My Tickets</h2>
-              <div id="tickets">You don't have any tickets. Why not try listing some?</div>
-              
-          </div>
-    </div>
-    
+
+<div class="text-center">
+    <div class="container" id="buy">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>User Dashboard</h1>
+                    <div id="output"></div>
+            </div>
+            <div class="col-md-6">
+                <h2>My Tickets</h2>
+                    <div id="tickets">You don't have any tickets. Why not try listing some?</div>
+
+            </div>
+            <div class="col-md-6">
+                <h2>My Orders</h2>
+                    <div id="orders">You don't have any orders. Why not try buying some?</div>
+            </div>
+        </div>
 </body>
-    
+
 </html>
