@@ -527,6 +527,9 @@ footer .btn.btn-primary {
 	font-size: 36px;
 	line-height: 36px;
 }
+#output {
+    color:white;
+}
 html, body {
     min-height: 100%;
 	background: #e5fcc2; /* For browsers that do not support gradients */
@@ -1322,4 +1325,5 @@ input[type=button], input[type=submit], input[type=reset] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    
 }

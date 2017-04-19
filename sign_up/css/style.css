@@ -91,14 +91,12 @@ input[type="text"], input[type="email"], input[type="password"]{
     outline: none;
     font-size: 14px;
     color: #fff !important;
-    margin: 14px 0px;
+    margin: 0 auto;
     font-family: 'Roboto', sans-serif;
     border: none;
     border-bottom: 1px solid #fff;
     opacity:80%;
 	background: transparent;
-    
-    
 }
 ::-moz-placeholder {
     opacity: 1;
@@ -140,12 +138,14 @@ input[type="submit"] {
     outline: none;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
-    margin:24px auto ;
+    margin:20px auto ;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -ms-transition: 0.5s all;
+    text-align: center;
+    display:block;
 }
 .w3layouts-main2 input[type="submit"] {
     margin: 27px auto 31px;
@@ -310,6 +310,7 @@ a.icon.gp {
 	}
 	.w3layouts-main h2, .w3layouts-main2 h3 {
 		font-size: 28px;
+        text-align:center;
 	}
 	.agileheader h1 {
 		margin: 45px 0px;
