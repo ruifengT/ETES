@@ -21,6 +21,7 @@
 			this.$checkoutCart = this.$element.find( "#checkout-cart" ); // Checkout form cart
 			this.$checkoutOrderForm = this.$element.find( "#checkout-order-form" ); // Checkout user details form
 			this.$shipping = this.$element.find( "#sshipping" ); // Element that displays the shipping rates
+            this.$service = this.$element.find (" #service" ); //service fee
 			this.$subTotal = this.$element.find( "#stotal" ); // Element that displays the subtotal charges
 			this.$shoppingCartActions = this.$element.find( "#shopping-cart-actions" ); // Cart actions links
 			this.$updateCartBtn = this.$shoppingCartActions.find( "#update-cart" ); // Update cart button
@@ -379,9 +380,11 @@
 						price: price,
 						qty: qty
 					});
+                    var service = subtotal * .05;
 					var shipping = self._convertString( self.storage.getItem( self.shippingRates ) );
 					var shippingRates = self._calculateShipping( qty );
 					var totalShipping = shipping + shippingRates;
+                    totalShipping = totalShipping + service;
 
 					self.storage.setItem( self.shippingRates, totalShipping );
 				});
