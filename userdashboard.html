@@ -106,12 +106,16 @@
     function gotosell(){
         window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
     }
+    function gotoBuy(){
+        window.location = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+    }
 </script>
 <body onload="getData(); getOrder();">
 <div class="topnav" id="myTopnav">
   <a href="contact.php">Contact Us</a>
   <a onclick="gotosell()">Sell Tickets</a>
-  <a href="shoppingcart/index.php">Buy Tickets</a>
+  <!-- <a href="shoppingcart/index.php?user_id=">Buy Tickets</a> -->
+  <a onclick="gotoBuy()">Buy Tickets</a>
   <a href="index.html">Home</a>
 </div>
 
