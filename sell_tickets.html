@@ -92,7 +92,7 @@
                 <p><form><input type="search" name="search" placeholder="Search for tickets"></form></p><br />
                 <p></p>
                 <form action="php/Postticket.php" method="post">
-                    <input placeholder="User ID" id="user_id" name="ID" type="text" required="" /><br>
+                    <input placeholder="User ID" id="user_id" name="ID" type="text" required="" readonly="readonly" /><br>
                     <script type="text/javascript">
                     var id = document.getElementById("user_id");
                     id.value = getParameterByName('user_id');
