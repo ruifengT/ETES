@@ -86,7 +86,7 @@ function IsInjected($str)
 <!DOCTYPE html>
   <html>
     <head>
-                <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
+      <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
 
       <title>ETES - Contact Us</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,23 +113,36 @@ function IsInjected($str)
       </style>  
       <script language="JavaScript" src="scripts/gen_validatorv31.js" type="text/javascript"></script>  
     </head>
+
+    <script>
+      function getParameterByName(name, url) {
+          if (!url) {
+            url = window.location.href;
+          }
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+      function goHome(){
+          window.location = 'index.html?user_id=' + getParameterByName('user_id');
+      }
+      function goBuy(){
+          window.location = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+      }
+    </script>
+
     <body class="three-blocks">
 <div class="topnav" id="myTopnav">
-  <a href="contact.php">Contact Us</a>
+<!--   <a href="contact.php">Contact Us</a> -->
   <a href="sign_up/signup.html">Sign In</a>
-    <a href="shoppingcart/index.php">Buy Tickets</a>
-    <a href="index.html">Home</a>
+<!--     <a href="ShoppingCart/index.php">Buy Tickets</a> -->
+    <a onclick="goBuy()">Buy Tickets</a>
+    <!-- <a href="index.html">Home</a> -->
+    <a onclick="goHome()">Home</a>
 </div>
-
- 
-
-
-
-
-
-
-
-
 
       <div class="text-center">
         <div class="container" id="buy">
