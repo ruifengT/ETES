@@ -10,43 +10,8 @@
     <script type="text/javascript" src="../js/shopping_cart.js"></script>
           <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
-<!--don't delete the following line-->
-<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
 </head>
-
-<script> 
-	function makeOrder(){
-		var id = getParameterByName('user_id');
-		var ticket_id = getParameterByName('ticket_id');
-		var obj, dbParam, xmlhttp, myObj, x, foo = "";
-		xmlhttp = new XMLHttpRequest();
-		// xmlhttp.onreadystatechange = function() {
-		// 	if (this.readyState == 4 && this.status == 200) {
-  //               document.getElementById("checkout").innerHTML = this.responseText;
-  //           }
-		// };
-		xmlhttp.open("POST","../php/Orders.php", true);
-		xmlhttp.send("user_id=" + id + "?ticket_id=" + ticket_id);
-		window.location='../checkout.html';
-	}
-
-	function getParameterByName(name, url) {
-        if (!url) {
-          url = window.location.href;
-        }
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-    function goBuy(){
-    	window.location = 'index.php?user_id=' + getParameterByName('user_id');
-    }
-</script>
-
-  <div class="topnav" id="myTopnav">
+    <div class="topnav" id="myTopnav">
   <a href="../contact.php">Contact Us</a>
   <a href="../sign_up/signup.html">Sign In</a>
   <a href="index.php">Buy Tickets</a>
@@ -99,24 +64,16 @@
 			</p>
 			<ul id="shopping-cart-actions">
 				<li>
-					<!-- <input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" /> -->
+					<input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" />
 				</li>
 				<li>
 					<input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" />
 				</li>
 				<li>
-<<<<<<< HEAD
 					<a id="back" href="index.php" class="btn">Continue Shopping</a>
 				</li>
 				<li>
 					<a id="next" class="btn">Go To Checkout</a>
-=======
-					<a onclick="goBuy()" class="btn">Continue Shopping</a>
-				</li>
-				<li>
-					<!-- <a href="checkout.html" class="btn">Go To Checkout</a> -->
-					<a onclick="makeOrder()" id="checkout" class="btn">Go To Checkout</a> 
->>>>>>> origin/master
 				</li>
 			</ul>
 		</form>
