@@ -1,0 +1,36 @@
+<html>
+    <!--ignore this file-->
+    <head>
+        <script>
+            function getOrderAddress(){
+                //var orderId = getParameterByName('order_id') when posting works...
+                var xmlhttp, jsonArray, x, txt ="";
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        jsonArray = JSON.parse(this.responseText);
+                        /*txt += "<p>"
+                            for (x in myObj) {
+                                txt += "User ID: "+jsonArray[x].user_id+" <br>Email: "+jsonArray[x].user_email+" <br>Name: "+jsonArray[x].user_name+" <br>Phone: "+jsonArray[x].user_phone+" <br>Address: "+jsonArray[x].user_address+" <br>Credit Card Number: "+jsonArray[x].user_creditcard +" <br>Account Date Created: "+jsonArray[x].user_create_stmp;
+                            }
+                        txt += "</p>"*/
+                        txt = jsonArray
+                        /*for(x in jsonArray){
+                            alert(jsonArray[x])
+                        }*/
+                        txt = jsonArray[1] //seller
+                        document.getElementById("output").innerHTML = txt;
+                    }
+                };
+                xmlhttp.open("POST", "../../php/Address.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlhttp.send();//in parens, enter order_id = orderId
+            }
+        </script>
+    </head>
+    <body onload = "getOrderAddress()">
+        <div id="output"></div>
+    </body>
+
+    
+</html>

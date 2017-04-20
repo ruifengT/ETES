@@ -2,7 +2,7 @@
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
         var storage = sessionStorage;
-        var origin1 = '7000 Coliseum Way, Oakland, CA 94621'; //replace with ticket address information
+        var origin1 = '7000 Coliseum Way, Oakland, CA 94621'; //replace with ticket address information, getOrderAddress()
         var destinationA;
         if(storage.getItem( "shipping-name" ) == null ){
             destinationA = storage.getItem("billing-address") +","+ storage.getItem("billing-city")+","+storage.getItem("billing-zip") + "," + storage.getItem("billing-country");
@@ -80,3 +80,18 @@
         }
         markersArray = [];
       }
+ function getOrderAddress(){
+     //var orderId = getParameterByName('order_id') when posting works...
+     var xmlhttp, jsonArray, x, txt ="";
+     xmlhttp = new XMLHttpRequest();
+     xmlhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+             jsonArray = JSON.parse(this.responseText);
+             txt = jsonArray[1] //seller
+         }
+     };
+     xmlhttp.open("POST", "../../php/Address.php", true);
+     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+     xmlhttp.send();//in parens, enter order_id = orderId
+     return txt;
+}
