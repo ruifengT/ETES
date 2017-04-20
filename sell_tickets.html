@@ -40,19 +40,46 @@
               if (!results[2]) return '';
               return decodeURIComponent(results[2].replace(/\+/g, " "));
           }
-              function gotodash(){
-        window.location = 'userdashboard.html?user_id=' + getParameterByName('user_id');
-    }
+          function gotodash(){
+              window.location = 'userdashboard.html?user_id=' + getParameterByName('user_id');
+            }
+
+          function goHome(){
+            var us_id = "index.html";
+            if (getParameterByName('user_id'))
+            {
+              us_id = 'index.html?user_id=' + getParameterByName('user_id');
+            }
+              window.location = us_id;
+          }
+
+          function goBuy(){
+            var us_id = 'ShoppingCart/index.php';
+            if (getParameterByName('user_id'))
+            {
+              us_id = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+            }
+            window.location = us_id;
+          }
+
+          function goContact(){
+            var us_id = 'contact.php';
+            if (getParameterByName('user_id'))
+              {
+                us_id = 'contact.php?user_id=' + getParameterByName('user_id');
+              }
+            window.location = us_id; 
+          }
       </script>
 
     </head>
     <body onload="getPara()">
 
 <div class="topnav" id="myTopnav">
-  <a href="contact.php">Contact Us</a>
-  <a href="ShoppingCart/index.php">Buy Tickets</a>
+  <a onclick="goContact()">Contact Us</a>
+  <a onclick="goBuy()">Buy Tickets</a>
   <a onclick="gotodash()">Dashboard</a>
-  <a href="index.html">Home</a>
+  <a onclick="goHome()">Home</a>
 </div>
 
       <div class="text-center">
