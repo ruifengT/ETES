@@ -18,7 +18,27 @@
   <a href="../index.html">Home</a>
 </div>
 
-<body>
+<script>
+    function getlink(){
+        var uid = getParameterByName('user_id');
+        var tid = getParameterByName('ticket_id');
+        document.getElementById("next").href = "checkout.html?ticket_id="+tid+"&user_id="+uid;
+        document.getElementById("back").href = "index.php?user_id="+uid;
+    }
+    function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+</script>
+
+<body onload="getlink()">
 
 <div id="site">
 	<header id="masthead">
@@ -50,10 +70,10 @@
 					<input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" />
 				</li>
 				<li>
-					<a href="index.php" class="btn">Continue Shopping</a>
+					<a id="back" href="index.php" class="btn">Continue Shopping</a>
 				</li>
 				<li>
-					<a href="checkout.html" class="btn">Go To Checkout</a>
+					<a id="next" class="btn">Go To Checkout</a>
 				</li>
 			</ul>
 		</form>
