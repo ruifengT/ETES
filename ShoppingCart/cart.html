@@ -10,12 +10,13 @@
     <script type="text/javascript" src="../js/shopping_cart.js"></script>
           <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
+
 </head>
     <div class="topnav" id="myTopnav">
-  <a href="../contact.php">Contact Us</a>
-  <a href="../sign_up/signup.html">Sign In</a>
-  <a href="index.php">Buy Tickets</a>
-  <a href="../index.html">Home</a>
+  <a onclick="goContact()">Contact Us</a>
+  <!-- <a href="../sign_up/signup.html">Sign In</a> -->
+  <a onclick="goBuy()">Buy Tickets</a>
+  <a onclick="goHome()">Home</a>
 </div>
 
 <script>
@@ -36,6 +37,18 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
+    function goBuy(){
+    	window.location = 'index.php?user_id=' + getParameterByName('user_id');
+    }
+    function goHome(){
+        window.location = '../index.html?user_id=' + getParameterByName('user_id');
+    }
+    function goContact(){
+        window.location = '../contact.php?user_id=' + getParameterByName('user_id');
+    }
+    function stayOnCart(){
+    	window.location = 'cart.html?user_id=' + getParameterByName('user_id');
+    }
 </script>
 
 <body onload="getlink()">
@@ -46,6 +59,7 @@
 	</header>
 	<div id="content">
 		<h1>Your Shopping Cart</h1>
+		<!-- action="cart.html" -->
 		<form id="shopping-cart" action="cart.html" method="post">
 			<table class="shopping-cart">
 			  <thead>
@@ -63,14 +77,15 @@
 				<strong>Sub Total</strong>: <span id="stotal"></span>
 			</p>
 			<ul id="shopping-cart-actions">
+				<!-- <li>
+					<input type="submit" onclick="stayOnCart()" name="update" id="update-cart" class="btn" value="Update Cart" />
+				</li> -->
 				<li>
-					<input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" />
-				</li>
-				<li>
+					<!-- need redirecting properly to include user_id in url -->
 					<input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" />
 				</li>
 				<li>
-					<a id="back" href="index.php" class="btn">Continue Shopping</a>
+					<a id="back" onclick="goBuy()" class="btn">Continue Shopping</a>
 				</li>
 				<li>
 					<a id="next" class="btn">Go To Checkout</a>
