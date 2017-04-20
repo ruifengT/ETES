@@ -13,7 +13,6 @@
     </head>
 
     <script> 
-      
       function getParameterByName(name, url) {
             if (!url) {
               url = window.location.href;
@@ -25,19 +24,42 @@
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, " "));
         }
-        function goBuy(){
-          window.location = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
-        }
-        function goHome(){
-          window.location = 'index.html?user_id=' + getParameterByName('user_id');
-        }
+
+      function goHome(){
+          var us_id = "index.html";
+          if (getParameterByName('user_id'))
+          {
+            us_id = 'index.html?user_id=' + getParameterByName('user_id');
+          }
+            window.location = us_id;
+      }
+      
+      function goBuy(){
+            var us_id = 'ShoppingCart/index.php';
+            if (getParameterByName('user_id'))
+            {
+              us_id = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+            }
+              window.location = us_id;
+      }
+
+      function goContact(){
+          var us_id = 'contact.php';
+          if (getParameterByName('user_id'))
+            {
+              us_id = 'contact.php?user_id=' + getParameterByName('user_id');
+            }
+          window.location = us_id;
+           
+      }
+
     </script>
     <body class="three-blocks">
         
 <!-- displays backwards due to css -->
 <div class="topnav" id="myTopnav">
     
-  <a href="contact.php">Contact Us</a>
+  <a onclick="goContact()">Contact Us</a>
   <a href="sign_up/signup.html">Sign In</a>
   <a onclick="goBuy()">Buy Tickets</a>
   <a onclick="goHome()" ">Home</a>
@@ -56,7 +78,7 @@
               <br>
                 <form action='ShoppingCart/index.php' metho='POST'>
                     <input type="search" name="search" placeholder="Search for tickets"></form> <p></p>
-              <p><a class="btn btn-default btn-lg" onclick=goBuy() role="button">Buy Now</a><a class="btn btn-default btn-lg" href="sign_up/signup.html" role="button">Register</a></p>
+              <p><a class="btn btn-default btn-lg" onclick="goBuy()"" role="button">Buy Now</a><a class="btn btn-default btn-lg" href="sign_up/signup.html" role="button">Register</a></p>
 
                 
                 <p></p><p></p><br>
