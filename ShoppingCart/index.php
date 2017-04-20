@@ -11,11 +11,35 @@
 <script type="text/javascript" src="../js/shopping_cart.js"></script>
 <script type="text/javascript" src = "js/distance_matrix.js"></script>
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+
+<script>
+	   function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    function goHome(){
+        window.location = '../index.html?user_id=' + getParameterByName('user_id');
+    }
+    function goContact(){
+        window.location = '../contact.php?user_id=' + getParameterByName('user_id');
+    }
+
+</script>
+
 <body>
 <div class="topnav" id="myTopnav">
-  <a href="../contact.php">Contact Us</a>
+  <a onclick="goContact()">Contact Us</a>
   <a href="../sign_up/signup.html">Sign In</a>
-  <a href="../index.html">Home</a>
+  <a onclick="goHome()">Home</a>
 </div>
 <div id="site">
 	<header id="masthead">
@@ -46,9 +70,6 @@
 			$ticket_price = $row['ticket_price'];
 			$ticket_pickup_address = $row['ticket_pickup_address'];
 			?>
-			<!-- 	break then parse information -->
-			<!-- HTML Information To Populate Blobs-->
-			<!-- should only be able to buy one ticket at a time -->
 			<li>
 				<div class="product-description" data-name="<?php echo $ticket_name?>" data-price="<?php echo $ticket_price?>">
 					<h4 class="product-name"> <?php echo $ticket_name?> </h4>
