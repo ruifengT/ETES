@@ -1,10 +1,18 @@
     function initMap() {
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
-
-        var origin1 = '1 Washington Sq,San Jose';
-        //var origin2 = 'Greenwich, England';
-        var destinationA = '7000 Coliseum Way, Oakland, CA 94621';
+        var storage = sessionStorage;
+        var origin1 = '7000 Coliseum Way, Oakland, CA 94621'; //replace with ticket address information
+        var destinationA;
+        if(storage.getItem( "shipping-name" ) == null ){
+            destinationA = storage.getItem("billing-address") +","+ storage.getItem("billing-city")+","+storage.getItem("billing-zip") + "," + storage.getItem("billing-country");
+        }
+        else{
+            destinationA = storage.getItem("shipping-address") +","+ storage.getItem("shipping-city")+","+storage.getItem("shipping-zip") + "," + storage.getItem("shipping-country");
+        }
+        /*var origin1 = '1 Washington Sq,San Jose';
+        //var origin2 = 'Greenwich, England';*/
+        //var destinationA = '7000 Coliseum Way, Oakland, CA 94621';
         //var destinationB = {lat: 50.087, lng: 14.421};
 
         var destinationIcon = 'https://chart.googleapis.com/chart?' +
