@@ -27,9 +27,8 @@
 		<?php
 		require "../php/Config.php";
 
-		if(!empty($_GET['user_id'])){
-            $id = $_GET['user_id'];
-        }
+		// getting current user's id
+		$id = $_GET['user_id'];
 
         $sql = "SELECT distinct ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_pickup_address FROM tickets";
         if(!empty($_GET['search'])){
@@ -55,7 +54,7 @@
 					<h5> <?php echo $ticket_detail?> </h5>
 					<h6> <?php echo $ticket_pickup_address?> </h6>
 					<p class="product-price">&dollar;<?php echo $ticket_price?></p>
-					<form class="add-to-cart" action="cart.html?ticket_id=<?php echo $ticket_id ?>&user_id=<?php echo $id ?>" method="post">
+					<form class="add-to-cart" action="cart.html?ticket_id=<?php echo $ticket_id ?>?currentUser=<?php echo $id ?>" method="post">
 					<!-- Remove Echo from formClass for user ID -->
 						<div>
 						<label for="qty-1">Quantity</label>
