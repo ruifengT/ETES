@@ -9,7 +9,7 @@
 
 		    // Properties
 
-			this.cartPrefix = "winery-"; // Prefix string to be prepended to the cart's name in the session storage
+			this.cartPrefix = "tickets"; // Prefix string to be prepended to the cart's name in the session storage
 			this.cartName = this.cartPrefix + "cart"; // Cart name in the session storage
 			this.shippingRates = this.cartPrefix + "shipping-rates"; // Shipping rates key in the session storage
 			this.total = this.cartPrefix + "total"; // Total key in the session storage
@@ -21,7 +21,7 @@
 			this.$checkoutCart = this.$element.find( "#checkout-cart" ); // Checkout form cart
 			this.$checkoutOrderForm = this.$element.find( "#checkout-order-form" ); // Checkout user details form
 			this.$shipping = this.$element.find( "#sshipping" ); // Element that displays the shipping rates
-            this.$service = this.$element.find (" #service" ); //service fee
+      this.$service = this.$element.find (" #sservice" ); //Element that displays the service fee - added by ETES
 			this.$subTotal = this.$element.find( "#stotal" ); // Element that displays the subtotal charges
 			this.$shoppingCartActions = this.$element.find( "#shopping-cart-actions" ); // Cart actions links
 			this.$updateCartBtn = this.$shoppingCartActions.find( "#update-cart" ); // Update cart button
@@ -76,6 +76,7 @@
 				this.storage.setItem( this.cartName, this._toJSONString( cart ) );
 				this.storage.setItem( this.shippingRates, "0" );
 				this.storage.setItem( this.total, "0" );
+
 			}
 		},
 
@@ -108,9 +109,9 @@
 					insertBefore( "#paypal-btn" );
 					$( "<div/>" ).html( "<input type='hidden' name='item_number_" + n + "' value='SKU " + name + "'/>" ).
 					insertBefore( "#paypal-btn" );
-					$( "<div/>" ).html( "<input type='hidden' name='amount_" + n + "' value='" + self._formatNumber( price, 2 ) + "'/>" ).
+					$( "<div/>" ).html( "<input type='hidden' name='amount_" + n + "' value='" + self._formatNumber( price, 3 ) + "'/>" ).
 					insertBefore( "#paypal-btn" );
-					$( "<div/>" ).html( "<input type='hidden' name='shipping_" + n + "' value='" + self._formatNumber( singShipping, 2 ) + "'/>" ).
+					$( "<div/>" ).html( "<input type='hidden' name='shipping_" + n + "' value='" + self._formatNumber( singShipping, 3 ) + "'/>" ).
 					insertBefore( "#paypal-btn" );
 
 				}
@@ -230,6 +231,7 @@
 					self.storage.setItem( self.cartName, self._toJSONString( updatedCart ) );
 					$( this ).parents( "tr" ).remove();
 					self.$subTotal[0].innerHTML = self.currency + " " + self.storage.getItem( self.total );
+
 				});
 			}
 		},
@@ -292,10 +294,12 @@
 
 					var cartTotal = this.storage.getItem( this.total );
 					var cartShipping = this.storage.getItem( this.shippingRates );
-					var subTot = this._convertString( cartTotal ) + this._convertString( cartShipping );
+					var service = cartTotal * 0.05; // Nan added 5% service fee charged to each ticket
+					var subTot = this._convertString( cartTotal ) + this._convertString( cartShipping ) + this._convertString(service);
 
 					this.$subTotal[0].innerHTML = this.currency + " " + this._convertNumber( subTot );
 					this.$shipping[0].innerHTML = this.currency + " " + cartShipping;
+					this.$service[0].innerHTML = this.currency + " " + service;
 				} else {
 					this.$subTotal[0].innerHTML = this.currency + " " + 0.00;
 					this.$shipping[0].innerHTML = this.currency + " " + 0.00;
@@ -372,19 +376,21 @@
 				$form.on( "submit", function() {
 					var qty = self._convertString( $form.find( ".qty" ).val() );
 					var subTotal = qty * price;
+
 					var total = self._convertString( self.storage.getItem( self.total ) );
 					var sTotal = total + subTotal;
+
 					self.storage.setItem( self.total, sTotal );
 					self._addToCart({
 						product: name,
 						price: price,
 						qty: qty
 					});
-                    var service = subtotal * .05;
+
 					var shipping = self._convertString( self.storage.getItem( self.shippingRates ) );
 					var shippingRates = self._calculateShipping( qty );
 					var totalShipping = shipping + shippingRates;
-                    totalShipping = totalShipping + service;
+
 
 					self.storage.setItem( self.shippingRates, totalShipping );
 				});
@@ -533,13 +539,11 @@
 
 		_calculateShipping: function( qty ) {
 			var shipping = 0;
-			if( qty >= 0 ) {
-				shipping = 5;
-			}
-			if( qty >= 3) {
-				shipping = 10;
-			}
 
+			if( qty >= 0 ) {
+				shipping = 5.00;
+
+			}
 
 			return shipping;
 
