@@ -22,16 +22,6 @@
             alert('You need to log in first.');
             window.location = 'sign_up/signup.html';
         }
-        /*var obj;
-        $.ajax({
-            url: 'php/UserDashboard.php',
-            type: 'POST',
-            data: {user_id: id},
-            dataType: 'json',
-            success: function(result){
-                $('#output').html(JSON.stringify(result));
-            }
-        });*/
         var obj, dbParam, xmlhttp, myObj, x, txt = "";
         obj = { "table":"customers", "limit":20 };
         dbParam = JSON.stringify(obj);
