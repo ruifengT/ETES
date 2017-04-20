@@ -93,20 +93,44 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
+    function goHome(){
+          var us_id = "index.html";
+          if (getParameterByName('user_id'))
+          {
+            us_id = 'index.html?user_id=' + getParameterByName('user_id');
+          }
+            window.location = us_id;
+      }
+      
+      function goToBuy(){
+            var us_id = 'ShoppingCart/index.php';
+            if (getParameterByName('user_id'))
+            {
+              us_id = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+            }
+              window.location = us_id;
+      }
+
+      function goContact(){
+          var us_id = 'contact.php';
+          if (getParameterByName('user_id'))
+            {
+              us_id = 'contact.php?user_id=' + getParameterByName('user_id');
+            }
+          window.location = us_id;
+           
+      }
     function gotosell(){
         window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
-    }
-    function gotoBuy(){
-        window.location = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
     }
 </script>
 <body onload="getData(); getOrder();">
 <div class="topnav" id="myTopnav">
-  <a href="contact.php">Contact Us</a>
+  <a onclick="goContact()">Contact Us</a>
   <a onclick="gotosell()">Sell Tickets</a>
   <!-- <a href="shoppingcart/index.php?user_id=">Buy Tickets</a> -->
-  <a onclick="gotoBuy()">Buy Tickets</a>
-  <a href="index.html">Home</a>
+  <a onclick="goToBuy()">Buy Tickets</a>
+  <a onclick="goHome()">Home</a>
 </div>
 
 

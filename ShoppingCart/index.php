@@ -27,10 +27,21 @@
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
     function goHome(){
-        window.location = '../index.html?user_id=' + getParameterByName('user_id');
+    	var us_id = "../index.html";
+    	if (getParameterByName('user_id'))
+    	{
+    		us_id = '../index.html?user_id=' + getParameterByName('user_id');
+    	}
+        // window.location = '../index.html?user_id=' + getParameterByName('user_id');
+        window.location = us_id;
     }
     function goContact(){
-        window.location = '../contact.php?user_id=' + getParameterByName('user_id');
+    	var us_id = '../contact.php';
+    	if (getParameterByName('user_id'))
+    	{
+    		us_id = '../contact.php?user_id=' + getParameterByName('user_id');
+    	}
+        window.location = us_id;
     }
 
 </script>
