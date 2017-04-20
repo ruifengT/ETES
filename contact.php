@@ -127,11 +127,23 @@ function IsInjected($str)
           return decodeURIComponent(results[2].replace(/\+/g, " "));
       }
       function goHome(){
-          window.location = 'index.html?user_id=' + getParameterByName('user_id');
+          var us_id = "index.html";
+          if (getParameterByName('user_id'))
+          {
+            us_id = 'index.html?user_id=' + getParameterByName('user_id');
+          }
+            window.location = us_id;
       }
+      
       function goBuy(){
-          window.location = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+            var us_id = 'ShoppingCart/index.php';
+            if (getParameterByName('user_id'))
+            {
+              us_id = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+            }
+              window.location = us_id;
       }
+      
     </script>
 
     <body class="three-blocks">
