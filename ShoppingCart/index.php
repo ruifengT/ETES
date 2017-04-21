@@ -16,7 +16,10 @@
 
 <script>
 	function alert(){
+		var id = getParameterByName('user_id');
+		if(id == null){
 		alert('You need to log in first!');
+		}
 	}
 	function getParameterByName(name, url) {
         if (!url) {
@@ -54,12 +57,20 @@
         }
         window.location = us_dashboard;
     }
+    function goBuy()
+    {   
+        window.location = 'index.php?user_id=' + getParameterByName('user_id');
+    }
+    function goSell()
+    {
+    		window.location = '../sell_tickets.html?user_id=' + getParameterByName('user_id');
+    }
     function signedIn()
     {
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a><a href='index.php'>Buy Tickets</a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {
@@ -109,8 +120,7 @@
 					<h5> <?php echo $ticket_detail?> </h5>
 					<h6> <?php echo $ticket_pickup_address?> </h6>
 					<p class="product-price">&dollar;<?php echo $ticket_price?></p>
-					 <!-- <form class="add-to-cart" action="checkout.html?ticket_id=<?php echo $ticket_id ?>&user_id=<?php echo $id ?>" method="post">  -->
-					<form class="add-to-cart" action="<?php 
+					<form class="add-to-cart"  action="<?php 
 						if(empty($_GET['user_id']))
 						{
 							echo "../sign_up/signup.html";
@@ -119,12 +129,11 @@
 							echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id;
 						}
 					?>" method="post">
-					<!-- Remove Echo from formClass for user ID -->
-						<div>
+						<div
 						<label for="qty-1">Quantity</label>
 						<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
 						</div>
-						<p><input type="submit" value="Checkout" class="btn"/></p>
+						<p onclick="alert()"><input type="submit" value="Checkout" class="btn"/></p>
 					</form>
 				</div>
 			</li>
