@@ -36,6 +36,7 @@ Click Buy Tickets on the navbar. This will refresh the page and show you all the
 
 #### Checkout
 Thank you for your business!
+
 Listed on the checkout page is the item, quantity, and price. Shipping is a flat fee of $10, combined with a service fee of 5% (of your ticket), and we do not charge sales tax. Your total is calculated from these three things. Now, enter in your details. Don't be shy, try entering a real address. Submit your details.
 
 #### Order
@@ -52,9 +53,13 @@ Let's make a new account. Enter in your sign-in credentials. This form will noti
 (*) This feature requires being logged in.
 
 [For those who want to try a pre-set database login, use 
+
 Username: abc123 
+
 Password: pa$$word
+
 and you'll see pre-set information on the dashboard.]
+
 Oh my, where do we even start? Upon first sight, you'll see the navbar has a new option: Sell Tickets. We'll get to that next. The dashboard shows you your User ID, Email, Name, Phone, Address, Credit Card Number, and the date your account was created. Following this is "My Tickets" and "My Orders" which, as you may have guessed, are tickets that you've listed and orders you've purchased (see [Buy Tickets](https://github.com/ruifengT/ETES#buy-tickets)). How about we try listing a ticket? Click on Sell Tickets in the navbar.
 
 #### Sell Tickets*
@@ -69,6 +74,8 @@ Thank you so much for taking the time to look at it.
 Yours Truly,
 
 Group 5
+
 [Christine Pham • Nanthana Thanonklin • Nicholas Tang • Jameson Thai • Ruifeng Tian]
+
 SP17 CS 160, sec 04 w/ Frank Butt
-# Electronic Ticket Exchange Service. **Fin.** ![alt text](https://github.com/ruifengT/etes/raw/master/images/tix.png "Ticket Logo") 
+# Electronic Ticket Exchange Service - **Fin.** ♥ ![alt text](https://github.com/ruifengT/etes/raw/master/images/tix.png "Ticket Logo") 
