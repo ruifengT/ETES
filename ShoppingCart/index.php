@@ -15,7 +15,10 @@
 </head>
 
 <script>
-	   function getParameterByName(name, url) {
+	function alert(){
+		alert('You need to log in first!');
+	}
+	function getParameterByName(name, url) {
         if (!url) {
           url = window.location.href;
         }
@@ -32,7 +35,6 @@
     	{
     		us_id = '../index.html?user_id=' + getParameterByName('user_id');
     	}
-        // window.location = '../index.html?user_id=' + getParameterByName('user_id');
         window.location = us_id;
     }
     function goContact(){
@@ -107,7 +109,16 @@
 					<h5> <?php echo $ticket_detail?> </h5>
 					<h6> <?php echo $ticket_pickup_address?> </h6>
 					<p class="product-price">&dollar;<?php echo $ticket_price?></p>
-					<form class="add-to-cart" action="checkout.html?ticket_id=<?php echo $ticket_id ?>&user_id=<?php echo $id ?>" method="post">
+					 <!-- <form class="add-to-cart" action="checkout.html?ticket_id=<?php echo $ticket_id ?>&user_id=<?php echo $id ?>" method="post">  -->
+					<form class="add-to-cart" action="<?php 
+						if(empty($_GET['user_id']))
+						{
+							echo "../sign_up/signup.html";
+						}
+						else{
+							echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id;
+						}
+					?>" method="post">
 					<!-- Remove Echo from formClass for user ID -->
 						<div>
 						<label for="qty-1">Quantity</label>
