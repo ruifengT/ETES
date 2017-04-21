@@ -58,16 +58,6 @@ body {
 	outline-style: none;
 }
 
-a:link {
-	color: #cc8500;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #cc1400;
-	text-decoration: underline;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	font-size: 100%;

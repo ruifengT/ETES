@@ -57,11 +57,11 @@
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a><a href='index.php'>Buy Tickets</a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {
-                foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goDash()'>Sign In</a> <a onclick='goHome()'>Home</a> </div>"
+                foo += "<a onclick='goContact()'>Contact Us</a><a href='index.php'>Buy Tickets</a><a onclick='goDash()'>Sign In</a> <a onclick='goHome()'>Home</a> </div>"
             }
         document.getElementById("myTopnav").innerHTML = foo;
     }
@@ -72,7 +72,7 @@
 </div>
 <div id="site">
 	<header id="masthead">
-		<h1>ETES<span class="tagline">Online Ticket Marketplace </h1>
+		<h1>ETES<span class="tagline">Online Ticket Marketplace</h1>
 	</header>
 	<div id="content"><br>
         <form action='index.php' metho='POST' style="text-align:center;">
