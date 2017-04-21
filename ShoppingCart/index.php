@@ -43,20 +43,40 @@
     	}
         window.location = us_id;
     }
-
+    function goDash()
+    {
+        var us_dashboard = "../sign_up/signup.html";
+        if (getParameterByName('user_id'))
+    	{
+    		us_dashboard = '../userdashboard.html?user_id=' + getParameterByName('user_id');
+        }
+        window.location = us_dashboard;
+    }
+    function signedIn()
+    {
+        var foo = "";
+        if (getParameterByName('user_id'))
+    	{
+            foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+        }
+        else
+            {
+                foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goDash()'>Sign In</a> <a onclick='goHome()'>Home</a> </div>"
+            }
+        document.getElementById("myTopnav").innerHTML = foo;
+    }
 </script>
 
-<body>
+<body onload="signedIn()">
 <div class="topnav" id="myTopnav">
-  <a onclick="goContact()">Contact Us</a>
-  <a href="../sign_up/signup.html">Sign In</a>
-  <a onclick="goHome()">Home</a>
 </div>
 <div id="site">
 	<header id="masthead">
 		<h1>ETES<span class="tagline">Online Ticket Marketplace </h1>
 	</header>
-	<div id="content">
+	<div id="content"><br>
+        <form action='index.php' metho='POST' style="text-align:center;">
+                    <input type="search" name="search" placeholder="Search for tickets"></form> <p></p>
 		<div id="products">
 		<ul>
 		<?php

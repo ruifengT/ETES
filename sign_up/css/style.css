@@ -165,25 +165,25 @@ span.icons {
     position: absolute;
 }
 span.icons.i1 {
-    top: 24%;
+    top: 26%;
 }
 span.icons.i2 {
-    top: 35%;
+    top: 39%;
 }
 .i1, .i2{
 	left: 5%;
 }
 span.icons.i3 {
-    top: 23%;
+    top: 26%;
 }
 span.icons.i4{
-    top: 35%;
+    top: 39%;
 }
 span.icons.i5 {
-    top: 47%;
+    top: 51%;
 }
 span.icons.i6 {
-    top: 57%;
+    top: 64%;
 }
 .i3, .i4, .i5, .i6{
 	left: 57.8%;
