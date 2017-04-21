@@ -37,29 +37,37 @@ Click Buy Tickets on the navbar. This will refresh the page and show you all the
 #### Checkout
 Thank you for your business!
 Listed on the checkout page is the item, quantity, and price. Shipping is a flat fee of $10, combined with a service fee of 5% (of your ticket), and we do not charge sales tax. Your total is calculated from these three things. Now, enter in your details. Don't be shy, try entering a real address. Submit your details.
+
 #### Order
 On this page, your data is sent and confirmed. Listed under it is the ticket ETA. Based on Google Maps API, it calculates the origin of the ticket and how long it'll take to get to you. Next is Check out with PayPal. We won't get into this today.
 Okay, enough of the ticket buying. Let's get to the databases.
+
 ### Sign In
 Upon clicking Sign In, there are two options. You can sign in with a username and password, or sign up, creating a new account. If you've checked out your PHPAdmin page and seen the database, you know there are existing logins. Go ahead and log in using one of those, and scroll down to Dashboard. If you're not XAMPP savvy, we can continue with the sign up process.
+
 #### Sign Up
 Let's make a new account. Enter in your sign-in credentials. This form will notify you if you leave it empty, the email will know if you miss your @ sign, and through PHP, it confirms your passwords are matching. Currently, for testing purposes, passwords do not need to be long. Upon completion, you'll be redirected to the Dashboard!
 
 #### Dashboard*
 (*) This feature requires being logged in.
+
 [For those who want to try a pre-set database login, use 
 Username: abc123 
 Password: pa$$word
 and you'll see pre-set information on the dashboard.]
 Oh my, where do we even start? Upon first sight, you'll see the navbar has a new option: Sell Tickets. We'll get to that next. The dashboard shows you your User ID, Email, Name, Phone, Address, Credit Card Number, and the date your account was created. Following this is "My Tickets" and "My Orders" which, as you may have guessed, are tickets that you've listed and orders you've purchased (see [Buy Tickets](https://github.com/ruifengT/ETES#buy-tickets)). How about we try listing a ticket? Click on Sell Tickets in the navbar.
+
 #### Sell Tickets*
 (*) This feature requires being logged in.
+
 A simple, straightforward page. At the top is a search bar for tickets, if you want to see if a ticket you want to post is already up, followed by six fields to fill out. The first one, User ID, is filled out for you using Javascript. Go ahead and put in anything you want for the ticket name, details, quantity (requires an integer number), price (takes doubles, if you wish to try this), and an address. Upon completion, you'll be given an alert and be redirected back to your dashboard where your new ticket will appear. Try checking Buy Tickets and see your new ticket!
+
 ### Contact Us
 Unfortunately, we're nearing the end of this README.md. You have tested all the features this project has - except one: Contact Us. Very simple, it features three fields for you to fill out: Name, Email, and Message. At the end, a security code has been added to ensure no one spams us (yeah, we're looking at you, right there). Go ahead and send us feedback about our project! 
 Thank you so much for taking the time to look at it.
 
 Yours Truly,
+
 Group 5
 [Christine Pham • Nanthana Thanonklin • Nicholas Tang • Jameson Thai • Ruifeng Tian]
 SP17 CS 160, sec 04 w/ Frank Butt
