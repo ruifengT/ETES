@@ -87,13 +87,13 @@
 					<h5> <?php echo $ticket_detail?> </h5>
 					<h6> <?php echo $ticket_pickup_address?> </h6>
 					<p class="product-price">&dollar;<?php echo $ticket_price?></p>
-					<form class="add-to-cart" action="cart.html?ticket_id=<?php echo $ticket_id ?>&user_id=<?php echo $id ?>" method="post">
+					<form class="add-to-cart" action="checkout.html?ticket_id=<?php echo $ticket_id ?>&user_id=<?php echo $id ?>" method="post">
 					<!-- Remove Echo from formClass for user ID -->
 						<div>
 						<label for="qty-1">Quantity</label>
 						<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
 						</div>
-						<p><input type="submit" value="Add to cart" class="btn"/></p>
+						<p><input type="submit" value="Checkout" class="btn"/></p>
 					</form>
 				</div>
 			</li>

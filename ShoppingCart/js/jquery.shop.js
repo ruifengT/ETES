@@ -295,11 +295,11 @@
 					var cartTotal = this.storage.getItem( this.total );
 					var cartShipping = this.storage.getItem( this.shippingRates );
 					var service = cartTotal * 0.05; // Nan added 5% service fee charged to each ticket
-					var subTot = this._convertString( cartTotal ) + this._convertString( cartShipping ) + this._convertString(service);
+					var subTot = this._convertString( cartTotal ) + this._convertString( cartShipping ) + this._convertString(service.toFixed(2));
 
-					this.$subTotal[0].innerHTML = this.currency + " " + this._convertNumber( subTot );
-					this.$shipping[0].innerHTML = this.currency + " " + cartShipping;
-					this.$service[0].innerHTML = this.currency + " " + service;
+					this.$subTotal[0].innerHTML = this.currency + " " + this._convertNumber( subTot.toFixed(2) );
+					this.$shipping[0].innerHTML = this.currency + " " + (cartShipping);
+					this.$service[0].innerHTML = this.currency + " " + service.toFixed(2);
 				} else {
 					this.$subTotal[0].innerHTML = this.currency + " " + 0.00;
 					this.$shipping[0].innerHTML = this.currency + " " + 0.00;
