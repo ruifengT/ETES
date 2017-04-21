@@ -145,7 +145,7 @@ function IsInjected($str)
       }
           function goDash()
     {
-        var us_dashboard = "../sign_up/signup.html";
+        var us_dashboard = "sign_up/signup.html";
         if (getParameterByName('user_id'))
     	{
     		us_dashboard = 'userdashboard.html?user_id=' + getParameterByName('user_id');

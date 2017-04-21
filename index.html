@@ -54,7 +54,7 @@
       }
     function goDash()
     {
-        var us_dashboard = "../sign_up/signup.html";
+        var us_dashboard = "sign_up/signup.html";
         if (getParameterByName('user_id'))
     	{
     		us_dashboard = 'userdashboard.html?user_id=' + getParameterByName('user_id');
@@ -66,11 +66,11 @@
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goBuy()'>Buy Tickets</a>  <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {
-                foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goDash()'>Sign In</a> <a onclick='goHome()'>Home</a> </div>"
+                foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goBuy()'>Buy Tickets</a> <a onclick='goDash()'>Sign In</a> <a onclick='goHome()'>Home</a> </div>"
             }
         document.getElementById("myTopnav").innerHTML = foo;
     }
