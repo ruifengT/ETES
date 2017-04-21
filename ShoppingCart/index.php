@@ -15,10 +15,10 @@
 </head>
 
 <script>
-	function alert(){
-		var id = getParameterByName('user_id');
-		if(id == null){
-		alert('You need to log in first!');
+	function check(){
+			if (getParameterByName('user_id')== null)
+			{
+			alert('You need to log in first.');
 		}
 	}
 	function getParameterByName(name, url) {
@@ -102,6 +102,7 @@
         $sql = "SELECT distinct ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_pickup_address FROM tickets";
         if(!empty($_GET['search'])){
             $keyword = $_GET['search'];
+
             $sql .= " where ticket_name like '%" . $keyword . "%' or ticket_detail like '%" . $keyword . "%'";
         }
 
@@ -133,7 +134,7 @@
 						<label for="qty-1">Quantity</label>
 						<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
 						</div>
-						<p onclick="alert()"><input type="submit" value="Checkout" class="btn"/></p>
+						<p onclick="check()"><input type="submit" value="Checkout" class="btn"/></p>
 					</form>
 				</div>
 			</li>
