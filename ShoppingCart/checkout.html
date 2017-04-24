@@ -10,36 +10,6 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
 
-<script>
-function createOrder(){
-    var uid = getParameterByName('user_id');
-    var tid = getParameterByName('ticket_id');
-    var qty = document.getElementsByClassName("pqty")[0].innerHTML;
-    var http = new XMLHttpRequest();
-    var url = "../php/Orders.php";
-    var params = "user_id=" + uid + "&ticket_id=" + tid + "&ticket_quantity=" + qty;
-    http.open("POST", url, true);
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.onreadystatechange = function(){
-        if(http.readyState == 4 && http.status == 200){
-            //orderId = JSON.parse(this.responseText);
-            alert(http.responseText);
-        }
-    }
-    http.send(params);
-}
-function getParameterByName(name, url) {
-    if (!url) {
-      url = window.location.href;
-    }
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-</script>
     
 </head>
     <div class="topnav" id="myTopnav">
@@ -84,7 +54,7 @@ function getParameterByName(name, url) {
 			</p>
 		 </div>
 
-         <!--<button onclick="createOrder()">Place Order</button>-->
+         <!--<button onclick="createOrder()">Place Order</button>comment out-->
 
 		 <form action="order.html" method="post" id="checkout-order-form">
 		 	<h2>Your Details</h2>
@@ -157,7 +127,7 @@ function getParameterByName(name, url) {
 		 		</div>
 		 	</fieldset>
 
-		 	<p><input type="submit" id="submit-order" value="Submit" class="btn" onclick = "createOrder()"/></p>
+		 	<p><input type="submit" id="submit-order" value="Submit" class="btn" onclick = "createOrder()" /></p><!---->
 
 		 </form>
 	</div>
@@ -166,6 +136,36 @@ function getParameterByName(name, url) {
 
 </div>
 
+<script>
+function createOrder(){
+    var uid = getParameterByName('user_id');
+    var tid = getParameterByName('ticket_id');
+    var qty = document.getElementsByClassName("pqty")[0].innerHTML;
+    var http = new XMLHttpRequest();
+    var url = "../php/Orders.php";
+    var params = "user_id=" + uid + "&ticket_id=" + tid + "&ticket_quantity=" + qty;
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.onreadystatechange = function(){
+        if(http.readyState == 4 && http.status == 200){
+            //orderId = JSON.parse(this.responseText);
+            alert(http.responseText);
+        }
+    }
+    http.send(params);
+}
+function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+</script>
 <!--
 <footer id="site-info">
 
