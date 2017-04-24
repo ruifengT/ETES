@@ -52,7 +52,7 @@
 			</p>
 		 </div>
 
-         <!--<button onclick="createOrder()">Place Order</button>comment out-->
+         <!--<button onclick="createOrder()">Place Order</button>-->
 
 		 <form action="order.html" method="post" id="checkout-order-form">
 		 	<h2>Your Details</h2>
@@ -125,7 +125,7 @@
 		 		</div>
 		 	</fieldset>
 
-		 	<p><input type="submit" id="submit-order" value="Submit" class="btn" onclick = "createOrder()" /></p><!---->
+		 	<p><input type="submit" id="submit-order" value="Submit" class="btn" onclick = "createOrder()"/></p>
 
 		 </form>
 	</div>
@@ -137,7 +137,7 @@
 function createOrder(){
     var uid = getParameterByName('user_id');
     var tid = getParameterByName('ticket_id');
-    /*var qty = document.getElementsByClassName("pqty")[0].innerHTML;
+    var qty = document.getElementsByClassName("pqty")[0].innerHTML;
     var http = new XMLHttpRequest();
     var url = "../php/Orders.php";
     var params = "user_id=" + uid + "&ticket_id=" + tid + "&ticket_quantity=" + qty;
@@ -149,9 +149,7 @@ function createOrder(){
             alert(http.responseText);
         }
     }
-    http.send(params);*/
-    console.log("checkout: " + tid.charAt(0));
-    sessionStorage.setItem("ticketId",tid.charAt(0));
+    http.send(params);
 }
 function getParameterByName(name, url) {
     if (!url) {

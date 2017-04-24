@@ -8,21 +8,21 @@ function initMap() {
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                  jsonArray = JSON.parse(this.responseText);
-                //console.log(jsonArray);
                  txt = jsonArray[0].ticket_pickup_address;
-                 sessionStorage.setItem("ticketAddress",txt);
+                 //alert(txt);
+                 sessionStorage.setItem("order",txt);
                  //document.getElementById('travel').innerHTML = 'Origin: <b>'+txt+'</b>';
                          //seller
             }
             //else{alert("uh oh");}
         };
-        xmlhttp.open("POST", "../php/Address.php", true);
+        xmlhttp.open("GET", "../php/Address.php", true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send('ticketId=' + sessionStorage.getItem("ticketId"));
+        xmlhttp.send();//in parens, enter order_id = orderId
         /*for(var i =0; i<sessionStorage.length;i++){
             console.log(sessionStorage.getItem(sessionStorage.key(i)));
         }*/
-        var origin1 = sessionStorage.getItem("ticketAddress");//"7000 Coliseum Way, Oakland, CA 94621, USA";
+        var origin1 = sessionStorage.getItem("order");//"7000 Coliseum Way, Oakland, CA 94621, USA";
         //console.log(origin1);
         var destinationA;
         if(sessionStorage.getItem( "shipping-name" ) == null ){
