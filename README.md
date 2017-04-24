@@ -1,6 +1,9 @@
 # ![alt text](https://github.com/ruifengT/etes/raw/master/images/tix.png "Ticket Logo") Electronic Ticket Exchange Service
 ETES (Electronic Ticket Exchange Service) is a ticket exchanging website similar to competitors StubHub and TicketMaster. This website allows for users to buy and sell their tickets in conjunction with major ticket sellers, such as the venues near San Jose and events they host. The website allows users to sell their tickets straight from their account. Tickets sold by users will be verified by ETES. Within one hour, ticket sold by a third-party seller on ETES will either be delivered by a person, or by mail.  For this project, we will provide real data in a fully functional website.
 
+## Video Help
+As per CS 160 class requirements, we have provided a video to help you through this process. [![ETES Help Video](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE "here") Click the image to view it. 
+
 ## User Guide
 ETES is used locally. This section will teach you how to install the required local host to test the project. There are several links throughout the README.md, we suggest you click them and follow along to this guide.
 
@@ -68,7 +71,8 @@ Oh my, where do we even start? Upon first sight, you'll see the navbar has a new
 A simple, straightforward page. At the top is a search bar for tickets, if you want to see if a ticket you want to post is already up, followed by six fields to fill out. The first one, User ID, is filled out for you using Javascript. Go ahead and put in anything you want for the ticket name, details, quantity (requires an integer number), price (takes doubles, if you wish to try this), and an address. Upon completion, you'll be given an alert and be redirected back to your dashboard where your new ticket will appear. Try checking Buy Tickets and see your new ticket!
 
 ### Contact Us
-Unfortunately, we're nearing the end of this README.md. You have tested all the features this project has - except one: Contact Us. Very simple, it features three fields for you to fill out: Name, Email, and Message. At the end, a security code has been added to ensure no one spams us (yeah, we're looking at you, right there). Go ahead and send us feedback about our project! 
+Unfortunately, we're nearing the end of this README.md. You have tested all the features this project has - except one: Contact Us. Very simple, it features three fields for you to fill out: Name, Email, and Message. At the end, a security code has been added to ensure no one spams us (yeah, we're looking at you, right there). Go ahead and send us feedback about our project!
+
 Thank you so much for taking the time to look at it.
 
 Yours Truly,
