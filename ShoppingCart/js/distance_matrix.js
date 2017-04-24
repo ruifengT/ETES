@@ -1,14 +1,35 @@
-    function initMap() {
+function initMap() {
+        //todo: get order_id from url. 
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
-        var storage = sessionStorage;
-        var origin1 = '7000 Coliseum Way, Oakland, CA 94621'; //replace with ticket address information, getOrderAddress()
+        //getAddress()
+        var xmlhttp, jsonArray, x, txt ="";
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                 jsonArray = JSON.parse(this.responseText);
+                 txt = jsonArray[0].ticket_pickup_address;
+                 //alert(txt);
+                 sessionStorage.setItem("order",txt);
+                 //document.getElementById('travel').innerHTML = 'Origin: <b>'+txt+'</b>';
+                         //seller
+            }
+            //else{alert("uh oh");}
+        };
+        xmlhttp.open("GET", "../php/Address.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send();//in parens, enter order_id = orderId
+        /*for(var i =0; i<sessionStorage.length;i++){
+            console.log(sessionStorage.getItem(sessionStorage.key(i)));
+        }*/
+        var origin1 = sessionStorage.getItem("order");//"7000 Coliseum Way, Oakland, CA 94621, USA";
+        //console.log(origin1);
         var destinationA;
-        if(storage.getItem( "shipping-name" ) == null ){
-            destinationA = storage.getItem("billing-address") +","+ storage.getItem("billing-city")+","+storage.getItem("billing-zip") + "," + storage.getItem("billing-country");
+        if(sessionStorage.getItem( "shipping-name" ) == null ){
+            destinationA = sessionStorage.getItem("billing-address") +","+ sessionStorage.getItem("billing-city")+","+sessionStorage.getItem("billing-zip") + "," + sessionStorage.getItem("billing-country");
         }
         else{
-            destinationA = storage.getItem("shipping-address") +","+ storage.getItem("shipping-city")+","+storage.getItem("shipping-zip") + "," + storage.getItem("shipping-country");
+            destinationA = sessionStorage.getItem("shipping-address") +","+ sessionStorage.getItem("shipping-city")+","+sessionStorage.getItem("shipping-zip") + "," + sessionStorage.getItem("shipping-country");
         }
         /*var origin1 = '1 Washington Sq,San Jose';
         //var origin2 = 'Greenwich, England';*/
@@ -66,7 +87,7 @@
               geocoder.geocode({'address': originList[i]}, showGeocodedAddressOnMap(false));
               for (var j = 0; j < results.length; j++) {
                 geocoder.geocode({'address': destinationList[j]}, showGeocodedAddressOnMap(true));
-                travelDiv.innerHTML += 'Origin: <b>'+originList[i] +'</b>'+ '<br> Destination: ' + '<b>'+destinationList[j]+'</b>' +'<br>';
+                travelDiv.innerHTML += 'Origin: <b>'+originList[i]+'</b>'+'<br> Destination: ' + '<b>'+destinationList[j]+'</b>' +'<br>';
                 travel_TimeDiv.innerHTML+= 'Distance to destination: ' + results[j].distance.text + '<br> Time to destination: ' +results[j].duration.text +'<br>';
               }
             }
@@ -80,18 +101,3 @@
         }
         markersArray = [];
       }
- function getOrderAddress(){
-     //var orderId = getParameterByName('order_id') when posting works...
-     var xmlhttp, jsonArray, x, txt ="";
-     xmlhttp = new XMLHttpRequest();
-     xmlhttp.onreadystatechange = function() {
-         if (this.readyState == 4 && this.status == 200) {
-             jsonArray = JSON.parse(this.responseText);
-             txt = jsonArray[1] //seller
-         }
-     };
-     xmlhttp.open("POST", "../../php/Address.php", true);
-     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-     xmlhttp.send();//in parens, enter order_id = orderId
-     return txt;
-}
