@@ -16,8 +16,7 @@
 
 <script>
 	function check(){
-			if (getParameterByName('user_id')== null)
-			{
+		if (getParameterByName('user_id')== null){
 			alert('You need to log in first.');
 		}
 	}
@@ -108,12 +107,14 @@
 
 		$result = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($result)){
+            if ($row['ticket_quantity'] > 0){
 			$ticket_id = $row['ticket_id'];
 			$ticket_name = $row['ticket_name'];
 			$ticket_detail = $row['ticket_detail'];
 			$ticket_quantity = $row['ticket_quantity'];
 			$ticket_price = $row['ticket_price'];
 			$ticket_pickup_address = $row['ticket_pickup_address'];
+
 			?>
 			<li>
 				<div class="product-description" data-name="<?php echo $ticket_name?>" data-price="<?php echo $ticket_price?>">
@@ -139,6 +140,7 @@
 				</div>
 			</li>
 			<?php
+                }
 			} // ending while loop
 			?>
 
