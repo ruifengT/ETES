@@ -9,8 +9,65 @@
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
-
-    
+<script>
+    	function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    function goHome(){
+    	var us_id = "../index.html";
+    	if (getParameterByName('user_id'))
+    	{
+    		us_id = '../index.html?user_id=' + getParameterByName('user_id');
+    	}
+        window.location = us_id;
+    }
+    function goContact(){
+    	var us_id = '../contact.php';
+    	if (getParameterByName('user_id'))
+    	{
+    		us_id = '../contact.php?user_id=' + getParameterByName('user_id');
+    	}
+        window.location = us_id;
+    }
+    function goDash()
+    {
+        var us_dashboard = "../sign_up/signup.html";
+        if (getParameterByName('user_id'))
+    	{
+    		us_dashboard = '../userdashboard.html?user_id=' + getParameterByName('user_id');
+        }
+        window.location = us_dashboard;
+    }
+    function goBuy()
+    {   
+        window.location = 'index.php?user_id=' + getParameterByName('user_id');
+    }
+    function goSell()
+    {
+    		window.location = '../sell_tickets.html?user_id=' + getParameterByName('user_id');
+    }
+    function signedIn()
+    {
+        var foo = "";
+        if (getParameterByName('user_id'))
+    	{
+            foo += "<a onclick='goContact()'>Contact Us</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+        }
+        else
+            {
+                foo += "<a onclick='goContact()'>Contact Us</a><a href='index.php'>Buy Tickets</a><a onclick='goDash()'>Sign In</a> <a onclick='goHome()'>Home</a> </div>"
+            }
+        document.getElementById("myTopnav").innerHTML = foo;
+    }
+</script>
 </head>
     <div class="topnav" id="myTopnav">
   <a href="../contact.php">Contact Us</a>
@@ -19,7 +76,7 @@
   <a href="../index.html">Home</a>
 </div>
 
-<body id="checkout-page">
+<body onload="signedIn()" id="checkout-page">
 
 <div id="site">
 	<header id="masthead">
@@ -42,15 +99,8 @@
 			</table>
             </form>
 		 <div id="pricing">
-
-			<p id="shipping">
-				<strong>Shipping</strong>: <span id="sshipping"></span>
-			</p>
-             <p id="shipping">
-				<strong>Service Fee (5%)</strong>: <span id="sservice"></span>
-			</p>
 			<p id="sub-total">
-				<strong>Total</strong>: <span id="stotal"></span>
+				<strong>Subtotal</strong>: <span id="stotal"></span>
 			</p>
 		 </div>
 
