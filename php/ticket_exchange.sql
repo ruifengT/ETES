@@ -116,7 +116,7 @@ INSERT INTO `tickets` (`ticket_id`, `ticket_name`, `ticket_detail`, `ticket_quan
 (5, 'Future: Nobody Safe Tour', 'Toyota Amphitheatre, Wheatland, CA, Jun 14th 2017, 7:00 PM. Section 105 seat 40.', 1, 90, 'def456', '374 Pescadero Terrace, Sunnyvale, CA 94086', '2017-04-20 11:40:53'),
 (6, 'Dierks Bentley What the Hell Tour', 'Save Mart Center, Fresno, CA Apr 29th 2017 7:30 P.M. Sec 224, Row D', 3, 30, 'abc123', '2390 Almaden Rd #30, San Jose, CA 95125', '2017-04-20 11:47:36'),
 (7, 'Anthony Hamilton', 'The Masonic San Francisco CA, April 27th 2017, 8:00 PM. Sec 9BAL, Row 10 ', 4, 30, 'def456', '374 Pescadero Terrace, Sunnyvale, CA 94086', '2017-04-20 11:53:54'),
-(8, 'Golden State Warriors V. Portland Round 1', 'Oracle Arena Oakland, CA, April 26th 2017 6:00 PM, Sec124 Row 21 Seat 5-7 ', 3, 270, 'ghi789', '2024 McDaniel Ave, San Jose, CA 95128', '2017-04-20 12:03:24'),
+(8, 'Golden State Warriors V. Portland', 'Oracle Arena Oakland, CA, April 26th 2017 6:00 PM, Sec124 Row 21 Seat 5-7 ', 3, 270, 'ghi789', '2024 McDaniel Ave, San Jose, CA 95128', '2017-04-20 12:03:24'),
 (9, 'Golden State Warriors Home Game D', 'Oracle Arena Oakland, CA, April 30th 2017 6:00 PM, Sec124 Row 21 Seats 5-7 ', 3, 270, 'ghi789', '2024 McDaniel Ave, San Jose, CA 95128', '2017-04-20 12:05:54');
 
 -- --------------------------------------------------------
