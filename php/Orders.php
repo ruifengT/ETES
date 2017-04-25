@@ -8,7 +8,7 @@ function console_log( $data ){
 
 $user_id = $_POST['user_id'];
 $ticket_id = $_POST['ticket_id'];
-$ticket_quantity = 1;//$_POST['ticket_quantity'];
+$ticket_quantity = $_POST['ticket_quantity'];//;
 $datetime = date('YmdHis');
 $sql_price = "SELECT `ticket_price` FROM `tickets` WHERE `ticket_id` = ". $ticket_id;
 
@@ -25,7 +25,7 @@ $result1 = mysqli_query($conn, $order_id);
 while($row = mysqli_fetch_array($result1)){
     $data[] = $row;
 }*/
-//console_log($data);
+console_log($sql_insert_order);
 if(mysqli_query($conn, $sql_insert_order)){
     //echo json_encode($result1);
     echo "Order palced in database.";

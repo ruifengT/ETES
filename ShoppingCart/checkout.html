@@ -140,11 +140,12 @@
 function createOrder(){
     var uid = getParameterByName('user_id');
     var tid = getParameterByName('ticket_id');
-    var qty = document.getElementsByClassName("pqty")[0].innerHTML;
+    //var qty = document.getElementsByClassName("pqty")[0].innerHTML;
+    var qty = document.getElementsByClassName("pqty")[0].getElementsByClassName("qty")[0].getAttribute("value");
     var http = new XMLHttpRequest(); 
     var url = "../php/Orders.php";
     var params = "user_id=" + uid + "&ticket_id=" + tid.charAt(0)+ "&ticket_quantity=" + qty;
-    console.log(tid.charAt(0));       
+    console.log(qty);       
     http.open("POST", url, true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     http.onreadystatechange = function(){
