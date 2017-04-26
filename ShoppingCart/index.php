@@ -64,12 +64,15 @@
     {
     		window.location = '../sell_tickets.html?user_id=' + getParameterByName('user_id');
     }
+    function goRemove(){
+        window.location ='remove_ticket.php?user_id=' + getParameterByName('user_id');
+    }
     function signedIn()
     {
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a> <a href='../sign_up/signup.html'>Logout</a> <a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a> <a href='../sign_up/signup.html'>Logout</a> <a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a> <a onclick='goRemove()'>Remove Tickets </a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {
