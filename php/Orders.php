@@ -25,14 +25,9 @@ $sql_update_quantity = "UPDATE `tickets` SET `ticket_quantity` = " . $ticket_rem
 mysqli_query($conn, $sql_update_quantity);
 
 $sql_insert_order = "INSERT INTO `orders`(`order_buy_user_id`, `order_sell_user_id`, `order_ticket_id`, `order_ticket_quantity`, `order_price`, `order_stmp`) VALUES ('" . $user_id . "',(SELECT `ticket_postedby` FROM `tickets` WHERE `ticket_id` = " . $ticket_id . ")," . $ticket_id . "," . $ticket_quantity . "," . $ticket_total_price . ", '" . $datetime . "')";
-/*$order_id = "SELECT `order_id` FROM `orders` order by `order_id` DESC LIMIT 1";
-$result1 = mysqli_query($conn, $order_id);
-while($row = mysqli_fetch_array($result1)){
-    $data[] = $row;
-}*/
-console_log($sql_insert_order);
+
 if(mysqli_query($conn, $sql_insert_order)){
-    //echo json_encode($result1);
+
     echo "Order palced in database.";
 }
 else{
