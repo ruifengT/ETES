@@ -72,7 +72,8 @@
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a> <a href='../sign_up/signup.html'>Logout</a> <a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a> <a onclick='goRemove()'>Remove Tickets </a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            // foo += "<a onclick='goContact()'>Contact Us</a> <a href='../sign_up/signup.html'>Logout</a> <a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a> <a onclick='goRemove()'>Remove Tickets </a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a> <a href='../sign_up/signup.html'>Logout</a> <a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {
@@ -136,7 +137,7 @@
 					?>" method="post">
 						<div
 						<label for="qty-1">Quantity</label>
-						<input type="number" min="1" name="qty-1" id="qty-1" class="qty" value="1" maxLength="2" required/>
+						<input type="number" min="1" name="qty-1" id="qty-1" class="qty" value="1" maxlength="2" required/>
 						</div>
 						<p onclick="check()"><input type="submit" value="Checkout" class="btn"/></p>
 					</form>
