@@ -133,7 +133,7 @@
 					?>" method="post">
 						<div
 						<label for="qty-1">Quantity</label>
-						<input type="number" name="qty-1" id="qty-1" class="qty" value="1" maxLength="2" />
+						<input type="number" min="1" name="qty-1" id="qty-1" class="qty" value="1" maxLength="2" required/>
 						</div>
 						<p onclick="check()"><input type="submit" value="Checkout" class="btn"/></p>
 					</form>
