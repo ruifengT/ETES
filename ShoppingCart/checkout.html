@@ -92,7 +92,14 @@
 		 			<label for="zip">ZIP Code</label>
 		 			<input type="text" name="zip" id="zip" data-type="string" data-message="This field cannot be empty" />
 		 		</div>
-		 		
+		 		<div>
+		 			<label for="country">Country</label>
+		 			<select name="country" id="country" data-type="string" data-message="This field cannot be empty">
+		 				<option value="">Select</option>
+		 				<option value="US">USA</option>
+		 				
+		 			</select>
+		 		</div>
 		 	</fieldset>
 		 	
 		 	<div id="shipping-same">Same as Billing <input type="checkbox" id="same-as-billing" value=""/></div>
@@ -121,7 +128,14 @@
 		 			<label for="szip">ZIP Code</label>
 		 			<input type="text" name="szip" id="szip" data-type="string" data-message="This field cannot be empty" />
 		 		</div>
-		 		
+		 		<div>
+		 			<label for="scountry">Country</label>
+		 			<select name="scountry" id="scountry" data-type="string" data-message="This field cannot be empty">
+		 				<option value="">Select</option>
+		 				<option value="US">USA</option>
+		 				
+		 			</select>
+		 		</div>
 		 	</fieldset>
 		 	
 		 	<p><input type="submit" id="submit-order" value="Submit" class="btn" /></p>
