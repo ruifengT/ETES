@@ -9,6 +9,16 @@ Custom Styles. Bootstrap Styles are default'
 * {
 }
 
+#edit{ 
+    background-color: #594F4F;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+	border-radius: 6px;
+    text-decoration: none;
+    margin: 2px 2px;
+    cursor: pointer;
+}
 #tix {
     border: 1px solid #ddd;
     color: white;

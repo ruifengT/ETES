@@ -37,11 +37,11 @@ function initMap() {
         //var destinationB = {lat: 50.087, lng: 14.421};
 
         var destinationIcon = 'https://chart.googleapis.com/chart?' +
-            'chst=d_map_pin_letter&chld=D|FF0000|000000';
+            'chst=d_map_pin_letter&chld=A|9DE0AD|000000';
         var originIcon = 'https://chart.googleapis.com/chart?' +
-            'chst=d_map_pin_letter&chld=O|FFFF00|000000';
+            'chst=d_map_pin_letter&chld=B|45ada8|000000';
         var map = new google.maps.Map(document.getElementById('map'), {
-          //center: {lat: 55.53, lng: 9.4},
+          center: {lat: 55.53, lng: 9.4},
           zoom: 10
         });
         var geocoder = new google.maps.Geocoder;

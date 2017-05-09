@@ -9,6 +9,8 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
 <script src = "js/distance_matrix.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 </head>
     <div class="topnav" id="myTopnav">
@@ -121,9 +123,9 @@
         <div id="ETA">
             <h2>Ticket ETA</h2>
             <div id="travel"></div>
-            <div id ="travel_time"></div>
+            <div id ="travel_time"></div><br>
             <div id="map"></div>
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXGNV-ePwHL5zOlxry9z8OEyNrIQHUAe0&callback=initMap"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXGNV-ePwHL5zOlxry9z8OEyNrIQHUAe0&callback=initMap" async defer></script>
         </div>
 
 <form id="paypal-form" action="" method="post">

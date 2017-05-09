@@ -31,7 +31,7 @@
                 myObj = JSON.parse(this.responseText);
                 txt += "<p>"
                 for (x in myObj) {
-                    txt += "User ID: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Name: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Credit Card Number: "+myObj[x].user_creditcard +" <br>Account Date Created: "+myObj[x].user_create_stmp;
+                    txt += "User ID: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Name: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Account Date Created: "+myObj[x].user_create_stmp+"<br><input type='submit' id='edit' value='Edit Profile'>";
                 }
                 txt += "</p>"
                 document.getElementById("output").innerHTML = txt;

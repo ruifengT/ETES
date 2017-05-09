@@ -102,7 +102,7 @@
         if(!empty($_GET['search'])){
             $keyword = $_GET['search'];
 
-            $sql .= " where ticket_name like '%" . $keyword . "%' or ticket_detail like '%" . $keyword . "%'";
+            $sql = " where ticket_name like '%" . $keyword . "%' or ticket_detail like '%" . $keyword . "%'";
         }
 
 		$result = mysqli_query($conn, $sql);
