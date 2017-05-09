@@ -81,7 +81,7 @@
 		},
 
 		// Appends the required hidden values to the PayPal's form before submitting
-
+	/*
 		populatePayPalForm: function() {
 			var self = this;
 			if( self.$paypalForm.length ) {
@@ -120,7 +120,7 @@
 
 			}
 		},
-
+		*/
 		// Displays the user's information
 
 		displayUserDetails: function() {
@@ -323,8 +323,16 @@
 		// Updates the cart
 
 		updateCart: function() {
+
+
+
+
+
+
+
+
 			var self = this;
-		  if( self.$updateCartBtn.length ) {
+		    if( self.$updateCartBtn.length ) {
 			self.$updateCartBtn.on( "click", function() {
 				var $rows = self.$formCart.find( "tbody tr" );
 				var cart = self.storage.getItem( self.cartName );
@@ -367,6 +375,8 @@
 
 		handleAddToCartForm: function() {
 			var self = this;
+
+
 			self.$formAddToCart.each(function() {
 				var $form = $( this );
 				var $product = $form.parent();
