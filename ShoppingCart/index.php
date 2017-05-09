@@ -134,9 +134,9 @@
 							// echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id, "?ticket_pickup_address=", $ticket_pickup_address;
                             echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id;						}
 					?>" method="post">
-						<div
+						<div>
 						<label for="qty-1">Quantity</label>
-						<input type="number" min="1" name="qty-1" id="qty-1" class="qty" value="1" maxlength="2" required />
+						<input type="number" min="1" name="qty-1" id="qty-1" class="qty" value="1" maxlength="2" required /> of <?php echo $ticket_quantity?>
 						</div>
 						<p onclick="check()"><input type="submit" value="Checkout" class="btn"/></p>
 					</form>

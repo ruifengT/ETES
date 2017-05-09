@@ -90,6 +90,7 @@
 	</header>
 	<div id="content">
 		<h1>Your Order</h1>
+        <p style="text-align:center;">Do not backspace or refresh this page.</p>
 			<table id="checkout-cart" class="shopping-cart">
 			  <thead>
 				<tr>
@@ -126,18 +127,23 @@
 	
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmBufV2nUVZxiOgG0g9Gr9F93z5dJeRz4&callback=initMap" async defer></script>
         </div>
-
+     <ul id="shopping-cart-actions" style="text-align:left;">
+         <li>
+             <p onclick="goDash()"><input type="submit" name="delete" id="empty-cart" class="btn" value="Pay Now" /></p>
+             </li>
+        </ul>
+<!--
 <form id="paypal-form" action="" method="post">
 	<input type="hidden" name="cmd" value="_cart" />
 	<input type="hidden" name="upload" value="1" />
 	<input type="hidden" name="business" value="" />
 
 	<input type="hidden" name="currency_code" value="" />
-	<!--<input type="submit" id="paypal-btn" class="btn" value="Pay with PayPal" />-->
+	<!--<input type="submit" id="paypal-btn" class="btn" value="Pay with PayPal" />      
 	<a href ="https://www.sandbox.paypal.com/" name="delete" id="empty-cart"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" alt="Check out with PayPal" /></a>
 </form>
 
-
+-->  
 	</div>
 
 
