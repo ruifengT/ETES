@@ -68,7 +68,6 @@ function initMap() {
             var directionsDisplay = new google.maps.DirectionsRenderer({
                 draggable: true,
                 map: map,
-                panel: document.getElementById('right-panel')
               });
               
             travelDiv.innerHTML = '';
