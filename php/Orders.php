@@ -28,7 +28,7 @@ $sql_insert_order = "INSERT INTO `orders`(`order_buy_user_id`, `order_sell_user_
 
 if(mysqli_query($conn, $sql_insert_order)){
 
-    echo "Order palced in database.";
+    echo "Order placed in database.";
 }
 else{
     echo "Fail to place order in database.";
