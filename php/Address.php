@@ -1,8 +1,8 @@
 <?php
 require "Config.php";
 
-$order_id = 2; // change this to next line for POST
-//$order_id = $_POST['order_id'];
+$order_id = 2;
+    //$_POST['ticket_id'];
 
 $sql_address =  "SELECT ticket_pickup_address FROM tickets AS t INNER JOIN orders AS o ON t.ticket_id = o.order_ticket_id WHERE order_id = " . $order_id;
 

@@ -130,7 +130,7 @@
 							echo "../sign_up/signup.html";
 						}
 						else{
-							echo "cart.html?ticket_id=", $ticket_id, "?user_id=", $id;
+							echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id, "?ticket_pickup_address", $ticket_pickup_address;
 						}
 					?>" method="post">
 						<div
