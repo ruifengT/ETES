@@ -69,7 +69,7 @@
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a href='../sign_up/signup.html'>Sign Out <a onclick='goContact()'>Contact Us</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a> <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </a> </div>"
         }
         else
             {
@@ -131,11 +131,12 @@
 						}
 						else{
 							echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id;
-						}
+							// echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id, "?ticket_pickup_address=", $ticket_pickup_address;
+                            echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id;						}
 					?>" method="post">
 						<div
 						<label for="qty-1">Quantity</label>
-						<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+						<input type="number" min="1" name="qty-1" id="qty-1" class="qty" value="1" maxlength="2" required />
 						</div>
 						<p onclick="check()"><input type="submit" value="Checkout" class="btn"/></p>
 					</form>
