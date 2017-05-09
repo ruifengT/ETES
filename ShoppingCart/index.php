@@ -94,11 +94,11 @@
 		<?php
 		require "../php/Config.php";
 
-		if(!empty($_GET['user_id'])){
+        $sql = "SELECT DISTINCT ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_postedby, ticket_pickup_address FROM tickets";
+        if(!empty($_GET['user_id'])){
             $id = $_GET['user_id'];
+            $sql .= " where NOT ticket_postedby like '%". $id ."%'";
         }
-
-        $sql = "SELECT distinct ticket_id, ticket_name, ticket_detail, ticket_quantity, ticket_price, ticket_pickup_address FROM tickets";
         if(!empty($_GET['search'])){
             $keyword = $_GET['search'];
 
@@ -113,14 +113,16 @@
 			$ticket_detail = $row['ticket_detail'];
 			$ticket_quantity = $row['ticket_quantity'];
 			$ticket_price = $row['ticket_price'];
+            $ticket_postedby = $row['ticket_postedby'];
 			$ticket_pickup_address = $row['ticket_pickup_address'];
 
 			?>
 			<li>
 				<div class="product-description" data-name="<?php echo $ticket_name?>" data-price="<?php echo $ticket_price?>">
 					<h4 class="product-name"> <?php echo $ticket_name?> </h4>
-					<h5> <?php echo $ticket_detail?> </h5>
-					<h6> <?php echo $ticket_pickup_address?> </h6>
+					<p> <?php echo $ticket_detail?> </p>
+					<p> <?php echo $ticket_pickup_address?> </p>
+                    <p>Ticket Posted By: <?php echo $ticket_postedby?></p>
 					<p class="product-price">&dollar;<?php echo $ticket_price?></p>
 					<form class="add-to-cart"  action="<?php 
 						if(empty($_GET['user_id']))
