@@ -9,6 +9,21 @@ Custom Styles. Bootstrap Styles are default'
 * {
 }
 
+#tix {
+    border: 1px solid #ddd;
+    color: white;
+	border-radius: 6px;
+	padding: 1em;
+	margin-bottom: 1.3em;
+    background-color: rgba(0,0,0,0.3)
+}
+#dash{
+    border: 1px solid #000;
+	border-radius: 6px;
+	padding: 1em;
+	margin-bottom: 1.3em;
+    background-color: rgba(0,0,0,0.2)
+}
 .topnav {
     background-color: #45ada8;
     overflow: hidden;

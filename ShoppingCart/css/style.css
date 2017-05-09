@@ -126,14 +126,14 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: 5px;
     margin: 0 .2em 1em auto;
     width: 250px;
-	height: 400px;
+	height: 415px;
 }
 
 .product-name {
 	text-align: center;
 	color: #45ada8;
 	margin: 0;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	padding-bottom: 0em;
 	border-bottom: 1px dotted #666;
 	text-transform: uppercase;
