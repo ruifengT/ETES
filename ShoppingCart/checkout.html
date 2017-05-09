@@ -6,7 +6,10 @@
             <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
 
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
 <script>
@@ -69,6 +72,8 @@
     }
     localStorage.setItem("order", "Smith");
 </script>
+
+  
 </head>
 </div>
 
@@ -103,8 +108,17 @@
         <ul id="shopping-cart-actions"><input type="submit" name="update" id="update-cart" class="btn" value="Update Cart"></ul>
         --Nan-->
 
+
+        
+
+
+        <!--end payment -- Processing-->
         <form onsubmit="return orderRedirect()" method="post" id="checkout-order-form">
-		 	<h2>Your Details</h2>
+		 	<h2>Your Billing and Shipping Detail</h2>
+
+            
+
+            </fieldset>
 
 		 	<fieldset id="fieldset-billing">
 		 		<legend>Billing</legend>
@@ -172,7 +186,7 @@
 		 		</div>
 		 	</fieldset>
 
-		 	<p><input type="submit" id="submit-order" value="Submit" class="btn" onclick = "createOrder()"/></p>
+		 	<p><input type="submit" id="submit-order" value="Proceed to Payment" class="btn" onclick = "createOrder()"/></p>
 
 		 </form>
 	</div>
@@ -221,6 +235,63 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+$(function() {
+  $('form.require-validation').bind('submit', function(e) {
+    var $form         = $(e.target).closest('form'),
+        inputSelector = ['input[type=email]', 'input[type=password]',
+                         'input[type=text]', 'input[type=file]',
+                         'textarea'].join(', '),
+        $inputs       = $form.find('.required').find(inputSelector),
+        $errorMessage = $form.find('div.error'),
+        valid         = true;
+
+    $errorMessage.addClass('hide');
+    $('.has-error').removeClass('has-error');
+    $inputs.each(function(i, el) {
+      var $input = $(el);
+      if ($input.val() === '') {
+        $input.parent().addClass('has-error');
+        $errorMessage.removeClass('hide');
+        e.preventDefault(); // cancel on first error
+      }
+    });
+  });
+});
+
+$(function() {
+  var $form = $("#payment-form");
+
+  $form.on('submit', function(e) {
+    if (!$form.data('cc-on-file')) {
+      e.preventDefault();
+      Stripe.setPublishableKey($form.data('stripe-publishable-key'));
+      Stripe.createToken({
+        number: $('.card-number').val(),
+        cvc: $('.card-cvc').val(),
+        exp_month: $('.card-expiry-month').val(),
+        exp_year: $('.card-expiry-year').val()
+      }, stripeResponseHandler);
+    }
+  });
+
+  function stripeResponseHandler(status, response) {
+    if (response.error) {
+      $('.error')
+        .removeClass('hide')
+        .find('.alert')
+        .text(response.error.message);
+    } else {
+      // token contains id, last4, and card type
+      var token = response['id'];
+      // insert the token into the form so it gets submitted to the server
+      $form.find('input[type=text]').empty();
+      $form.append("<input type='hidden' name='reservation[stripe_token]' value='" + token + "'/>");
+      $form.get(0).submit();
+    }
+  }
+})
+
 </script>
 <!--
 <footer id="site-info">
