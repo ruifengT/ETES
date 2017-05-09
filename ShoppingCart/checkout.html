@@ -70,11 +70,6 @@
     localStorage.setItem("order", "Smith");
 </script>
 </head>
-    <div class="topnav" id="myTopnav">
-  <a href="../contact.php">Contact Us</a>
-  <a href="../sign_up/signup.html">Logout</a>
-  <a href="index.php">Buy Tickets</a>
-  <a href="../index.html">Home</a>
 </div>
 
 <body onload="signedIn()" id="checkout-page">
@@ -105,9 +100,9 @@
 			</p>
 		 </div>
         <ul id="shopping-cart-actions"><input type="submit" name="update" id="update-cart" class="btn" value="Update Cart"></ul>
-         <!--<button onclick="createOrder()">Place Order</button><!---comment me-->
+        
 
-		 <form action="order.html" method="post" id="checkout-order-form">
+        <form onsubmit="return orderRedirect()" method="post" id="checkout-order-form">
 		 	<h2>Your Details</h2>
 
 		 	<fieldset id="fieldset-billing">
@@ -176,7 +171,7 @@
 		 		</div>
 		 	</fieldset>
 
-		 	<p><input type="submit" id="submit-order" value="Submit" class="btn" onclick = "createOrder()"/></p><!---->
+		 	<p><input type="submit" id="submit-order" value="Submit" class="btn" onclick = "createOrder()"/></p>
 
 		 </form>
 	</div>
@@ -204,6 +199,12 @@ function createOrder(){
         }
     }
     http.send(params);
+}
+function orderRedirect(){
+    var uid = getParameterByName('user_id');
+    var url = 'order.html?user_id=' + uid;
+    window.location.replace(url);
+    return false;
 }
 function getParameterByName(name, url) {
     if (!url) {
