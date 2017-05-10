@@ -204,9 +204,9 @@ function createOrder(){
 }
 function orderRedirect(){
     var uid = getParameterByName('user_id');
-    var start = uid.indexOf("checkout");
-                uid = uid.slice(0,start);
-                console.log(uid);
+    // var start = uid.indexOf("checkout");
+    //             uid = uid.slice(0,start);
+    //             console.log(uid);
     var url = 'order.html?user_id=' + uid;
     window.location.replace(url);
     return false;
