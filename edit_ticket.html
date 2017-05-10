@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ETES - Edit Profile</title>
+        <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
+
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+      <link href="css/style.css" rel="stylesheet">
+<!--don't delete the following line-->
+<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+    function getData(){
+        var id = getParameterByName('user_id');
+        var tid = getParameterByName('ticket_id');
+        if(id == null){
+            alert('You need to log in first.');
+            window.location = 'sign_up/signup.html';
+        }
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { "table":"tickets", "limit":20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                document.getElementById("ticket_id").value = myObj[0].ticket_id;
+                document.getElementById("ticket_name").value = myObj[0].ticket_name;
+                document.getElementById("ticket_detail").value = myObj[0].ticket_detail;
+                document.getElementById("ticket_quantity").value = myObj[0].ticket_quantity;
+                document.getElementById("ticket_price").value = myObj[0].ticket_price;
+                document.getElementById("ticket_postedby").value = myObj[0].ticket_postedby;
+                document.getElementById("ticket_pickup_address").value = myObj[0].ticket_pickup_address;
+            }
+        };
+        xmlhttp.open("POST", "php/Ticket.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("ticket_id=" + tid);
+    }
+    function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    function goHome(){
+      var us_id = "index.html";
+      if (getParameterByName('user_id'))
+      {
+        us_id = 'index.html?user_id=' + getParameterByName('user_id');
+      }
+        window.location = us_id;
+    }
+
+    function goToBuy(){
+        var us_id = 'ShoppingCart/index.php';
+        if (getParameterByName('user_id'))
+        {
+          us_id = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+        }
+          window.location = us_id;
+    }
+
+    function goContact(){
+      var us_id = 'contact.php';
+      if (getParameterByName('user_id'))
+        {
+          us_id = 'contact.php?user_id=' + getParameterByName('user_id');
+        }
+      window.location = us_id;
+
+    }
+    function gotosell(){
+        window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
+    }
+</script>
+</head>
+
+<body onload="getData();">
+    <div class="topnav" id="myTopnav">
+      <a onclick="goContact()">Contact Us</a>
+      <a href="sign_up/signup.html">Logout </a>
+      <a onclick="gotosell()">Sell Tickets</a>
+      <a onclick="goToBuy()">Buy Tickets</a>
+      <a onclick="goHome()">Home</a>
+    </div>
+
+    <div class="text-center">
+      <div class="container" id="buy">
+        <div class="row">
+
+
+          <div class="col-md-12">
+              <h1>Edit Profile</h1>
+              <form action="php/EditTicket.php" method="post">
+                  <input placeholder="Ticket ID" id="ticket_id" name="ID" type="text" required="" readonly="readonly" /><br>
+                  <input placeholder="Ticket Name" id="ticket_name" name="Name" type="text" maxlength="15"/><br>
+                  <input placeholder="Ticket Details" id="ticket_detail" name="Detail" type="text" maxlength="70"/><br>
+                  <input placeholder="Quantity" id="ticket_quantity" name="Quantity" type="number" min="1" maxlength="2"/><br>
+                  <input placeholder="Price" id="ticket_price" name="Price" type="number" min="1" step="0.01" maxlength="3"/><br>
+                  <input placeholder="Post User ID" id="ticket_postedby" name="Postby" type="text" required="" readonly="readonly" /><br>
+                  <input placeholder = "Address" id="ticket_pickup_address" type="text" name="Address" pattern="[0-9]{0,4}[ ]{1}[A-Za-z ]{1,30}" title="Use a valid address, e.g. 101 Rainbow Way" /><br>
+                  <input type='submit' value='Edit Ticket'>
+              </form>
+
+</body>
+</html>

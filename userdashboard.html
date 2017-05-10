@@ -49,7 +49,7 @@
                 myObj = JSON.parse(this.responseText);
                 foo += "<p>"
                 for (x in myObj) {
-                    foo += "Ticket Name: "+myObj[x].ticket_name+" <br>Details: "+myObj[x].ticket_detail+" <br>Ticket Quantity: "+myObj[x].ticket_quantity+" <br>Address: "+myObj[x].ticket_pickup_address+" <br>Ticket Price: $"+myObj[x].ticket_price +" <br>Posted on: "+myObj[x].ticket_stmp+"<br><br>";
+                    foo += "Ticket ID: "+myObj[x].ticket_id+" <br>Ticket Name: "+myObj[x].ticket_name+" <br>Details: "+myObj[x].ticket_detail+" <br>Ticket Quantity: "+myObj[x].ticket_quantity+" <br>Ticket Price: $"+myObj[x].ticket_price +" <br>Posted by: "+myObj[x].ticket_postedby +" <br>Address: "+myObj[x].ticket_pickup_address+" <br>Posted on: "+myObj[x].ticket_stmp+"<br><a href='edit_ticket.html?user_id="+id+"&ticket_id="+myObj[x].ticket_id+"' style='color:#45ada8'>Edit Ticket</a><br>";
                 }
                 foo += "</p>"
                 document.getElementById("tickets").innerHTML = foo;
@@ -133,6 +133,12 @@
         else if(msg == 'edit_success'){
             alert('Your profile has been changed successfully!');
         }
+        else if(msg == 'edit_t_error'){
+            alert('Your ticket has failed to be changed.');
+        }
+        else if(msg == 'edit_t_success'){
+            alert('Your ticket has been changed successfully!');
+        }
     }
 </script>
 
@@ -149,18 +155,24 @@
 <div class="text-center">
     <div class="container" id="buy">
         <div class="row">
-            <div id="dash" class="col-md-12">
+            <div class="col-md-12">
+                <div id="dash">
                 <h1>User Dashboard</h1>
                     <div id="output"></div>
+                </div>
             </div>
-            <div id="tix" class="col-md-6">
+            <div class="col-md-6">
+                <div id="tix">
                 <h2 style="color:white;">My Tickets</h2>
                     <div id="tickets">You don't have any tickets. Why not try listing some?</div>
+                </div>
 
             </div>
-            <div id="tix" class="col-md-6">
+            <div class="col-md-6">
+                <div id="tix">
                 <h2 style="color:white;">My Orders</h2>
                     <div id="orders">You don't have any orders. Why not try buying some tickets?</div>
+                </div>
             </div>
         </div>
 </body>
