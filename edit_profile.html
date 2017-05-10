@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ETES - Edit Profile</title>
+        <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
+
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+
+      <link href="css/style.css" rel="stylesheet">
+<!--don't delete the following line-->
+<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+    function getData(){
+        var id = getParameterByName('user_id');
+        if(id == null){
+            alert('You need to log in first.');
+            window.location = 'sign_up/signup.html';
+        }
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { "table":"customers", "limit":20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myObj = JSON.parse(this.responseText);
+                document.getElementById("user_id").value = myObj[0].user_id;
+                document.getElementById("user_name").value = myObj[0].user_name;
+                document.getElementById("user_email").value = myObj[0].user_email;
+                document.getElementById("user_phone").value = myObj[0].user_phone;
+                document.getElementById("user_address").value = myObj[0].user_address;
+                document.getElementById("user_creditcard").value = myObj[0].user_creditcard;
+            }
+        };
+        xmlhttp.open("POST", "php/UserDashboard.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("user_id=" + id);
+    }
+    function getParameterByName(name, url) {
+        if (!url) {
+          url = window.location.href;
+        }
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    function goHome(){
+      var us_id = "index.html";
+      if (getParameterByName('user_id'))
+      {
+        us_id = 'index.html?user_id=' + getParameterByName('user_id');
+      }
+        window.location = us_id;
+    }
+
+    function goToBuy(){
+        var us_id = 'ShoppingCart/index.php';
+        if (getParameterByName('user_id'))
+        {
+          us_id = 'ShoppingCart/index.php?user_id=' + getParameterByName('user_id');
+        }
+          window.location = us_id;
+    }
+
+    function goContact(){
+      var us_id = 'contact.php';
+      if (getParameterByName('user_id'))
+        {
+          us_id = 'contact.php?user_id=' + getParameterByName('user_id');
+        }
+      window.location = us_id;
+
+    }
+    function gotosell(){
+        window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
+    }
+</script>
+</head>
+
+<body onload="getData();">
+    <div class="topnav" id="myTopnav">
+      <a onclick="goContact()">Contact Us</a>
+      <a href="sign_up/signup.html">Logout </a>
+      <a onclick="gotosell()">Sell Tickets</a>
+      <a onclick="goToBuy()">Buy Tickets</a>
+      <a onclick="goHome()">Home</a>
+    </div>
+
+    <div class="text-center">
+      <div class="container" id="buy">
+        <div class="row">
+
+
+          <div class="col-md-12">
+              <h1>Edit Profile</h1>
+              <form action="php/EditProfile.php" method="post">
+                  <input placeholder="User ID" id="user_id" name="ID" type="text" required="" readonly="readonly" /><br>
+                  <input placeholder="Name" id="user_name" name="Name" type="text"/><br>
+                  <input placeholder="Email" id="user_email" name="Email" type="Email"/><br>
+                  <input placeholder="Phone" id="user_phone" name="Phone" type="number"/><br>
+                  <input placeholder = "Address" id="user_address" type="text" name="Address" id="address" pattern="[0-9]{0,4}[ ]{1}[A-Za-z ]{1,30}" title="Use a valid address, e.g. 101 Rainbow Way" /><br>
+                  <input placeholder="Credit Card" id="user_creditcard" name="Credit" type="number"/><br>
+                  <input type='submit' value='Save Changes'>
+              </form>
+
+</body>
+</html>

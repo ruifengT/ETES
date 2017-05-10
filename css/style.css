@@ -9,7 +9,7 @@ Custom Styles. Bootstrap Styles are default'
 * {
 }
 
-#edit{ 
+#edit{
     background-color: #594F4F;
     border: none;
     color: white;
@@ -33,6 +33,10 @@ Custom Styles. Bootstrap Styles are default'
 	padding: 1em;
 	margin-bottom: 1.3em;
     background-color: rgba(0,0,0,0.2)
+}
+#output{
+    font-size: 16px;
+    font-weight: bold;
 }
 .topnav {
     background-color: #45ada8;
@@ -648,7 +652,7 @@ html, body {
 	font-family: "Roboto", serif;
 }
 .orange {
-	
+
 	padding: 0 0 10px 0;
 }
 .black-text {
@@ -715,7 +719,7 @@ aside a.btn {
 }
 /* Footer */
 footer {
-	
+
 	padding: 0px 0 0px;
 	color: rgba(255,255,255,0.6);
 }
@@ -1314,7 +1318,6 @@ h4 {
 }
 
 
-
 input[type="search"] {
     width: 200px;
     box-sizing: border-box;
@@ -1334,13 +1337,13 @@ input[type="search"]:focus {
     width: 75%;
 }
 
-input[type=text], input[type=number] {
+input[type=text], input[type=number], input[type=email] {
     width: 35%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 }
-input[type=button], input[type=submit], input[type=reset] {
+button, input[type=button], input[type=submit], input[type=reset] {
     background-color: #45ada8;
     border: none;
     color: white;
@@ -1348,5 +1351,5 @@ input[type=button], input[type=submit], input[type=reset] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    
+
 }

@@ -17,7 +17,6 @@
 <script>
     function getData(){
         var id = getParameterByName('user_id');
-        var msg = getParameterByName('msg');
         if(id == null){
             alert('You need to log in first.');
             window.location = 'sign_up/signup.html';
@@ -31,7 +30,7 @@
                 myObj = JSON.parse(this.responseText);
                 txt += "<p>"
                 for (x in myObj) {
-                    txt += "User ID: "+myObj[x].user_id+" <br>Email: "+myObj[x].user_email+" <br>Name: "+myObj[x].user_name+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Account Date Created: "+myObj[x].user_create_stmp+"<br><input type='submit' id='edit' value='Edit Profile'>";
+                    txt += "User ID: "+myObj[x].user_id+" <br>Name: "+myObj[x].user_name+" <br>Email: "+myObj[x].user_email+" <br>Phone: "+myObj[x].user_phone+" <br>Address: "+myObj[x].user_address+" <br>Credit Card: "+myObj[x].user_creditcard+" <br>Account Date Created: "+myObj[x].user_create_stmp+"<br><button id='edit_profile' onclick=goEdit()>Edit Profile</button>";
                 }
                 txt += "</p>"
                 document.getElementById("output").innerHTML = txt;
@@ -101,7 +100,7 @@
           }
             window.location = us_id;
       }
-      
+
       function goToBuy(){
             var us_id = 'ShoppingCart/index.php';
             if (getParameterByName('user_id'))
@@ -118,13 +117,26 @@
               us_id = 'contact.php?user_id=' + getParameterByName('user_id');
             }
           window.location = us_id;
-           
+
       }
     function gotosell(){
         window.location = 'sell_tickets.html?user_id=' + getParameterByName('user_id');
     }
+    function goEdit(){
+        window.location = 'edit_profile.html?user_id=' + getParameterByName('user_id');
+    }
+    function displayEdit(){
+        var msg = getParameterByName('msg');
+        if(msg == 'edit_error'){
+            alert('Your profile has failed to be changed.');
+        }
+        else if(msg == 'edit_success'){
+            alert('Your profile has been changed successfully!');
+        }
+    }
 </script>
-<body onload="getData(); getOrder();">
+
+<body onload="getData(); getOrder();displayEdit();">
 <div class="topnav" id="myTopnav">
   <a onclick="goContact()">Contact Us</a>
   <a href="sign_up/signup.html">Logout </a>
