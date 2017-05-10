@@ -47,7 +47,7 @@
         window.location = us_dashboard;
     }
     function goBuy()
-    {   
+    {
         window.location = 'index.php?user_id=' + getParameterByName('user_id');
     }
     function goSell()
@@ -173,7 +173,7 @@
 		 		</div>
 		 	</fieldset>
 
-		 	<p><input type="submit" id="submit-order" value="Proceed to Payment" class="btn" onclick = "createOrder()"/></p>
+		 	<p><input type="submit" id="submit-order" value="Complete Order" class="btn" onclick = "createOrder()"/></p>
 
 		 </form>
 	</div>
@@ -188,7 +188,7 @@ function createOrder(){
     var tid = getParameterByName('ticket_id');
     //var qty = document.getElementsByClassName("pqty")[0].innerHTML;
     var qty = document.getElementsByClassName("pqty")[0].getElementsByClassName("qty")[0].getAttribute("value");
-    var http = new XMLHttpRequest(); 
+    var http = new XMLHttpRequest();
     var url = "../php/Orders.php";
     var params = "user_id=" + uid + "&ticket_id=" + tid.charAt(0)+ "&ticket_quantity=" + qty;
     console.log(qty);
