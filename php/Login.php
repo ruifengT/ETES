@@ -15,7 +15,7 @@ if(empty($data)){
     header('location: ../sign_up/signup.html?error=login_empty');
 }
 else{
-    if($data[0][1] != $login_user_password){
+    if(!password_verify($login_user_password, $data[0][1])){
         header('location: ../sign_up/signup.html?error=wrong_password');
     }
     else{
