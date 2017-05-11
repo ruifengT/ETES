@@ -12,10 +12,6 @@
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 </head>
     <div class="topnav" id="myTopnav">
-  <a href="../contact.php">Contact Us</a>
-  <a href="../sign_up/signup.html">Sign In</a>
-  <a href="index.php">Buy Tickets</a>
-  <a href="../index.html">Home</a>
 </div>
 <script>
 	function check(){
@@ -60,7 +56,7 @@
         window.location = us_dashboard;
     }
     function goBuy()
-    {   
+    {
         window.location = 'index.php?user_id=' + getParameterByName('user_id');
     }
     function goSell()
@@ -72,7 +68,7 @@
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a><a href='../sign_up/signup.html'>Logout</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {
@@ -109,7 +105,7 @@
 				<strong>Delivery</strong>: <span id="sshipping"></span>
 			</p>
              <p id="shipping">
-				<strong>Service Fee</strong>: <span id="sservice"></span>
+				<strong>Service Fee (5%)</strong>: <span id="sservice"></span>
 			</p>
 			<p id="sub-total">
 				<strong>Total</strong>: <span id="stotal"></span>
@@ -124,7 +120,7 @@
             <div id="travel"></div>
             <div id ="travel_time"></div><br>
             <div id="map"></div>
-	
+
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmBufV2nUVZxiOgG0g9Gr9F93z5dJeRz4&callback=initMap" async defer></script>
         </div>
      <ul id="shopping-cart-actions" style="text-align:left;">
@@ -132,19 +128,8 @@
              <p onclick="goDash()"><input type="submit" name="delete" id="empty-cart" class="btn" value="View Order" /></p>
              </li>
         </ul>
-<!--
-<form id="paypal-form" action="" method="post">
-	<input type="hidden" name="cmd" value="_cart" />
-	<input type="hidden" name="upload" value="1" />
-	<input type="hidden" name="business" value="" />
 
-	<input type="hidden" name="currency_code" value="" />
-	<!--<input type="submit" id="paypal-btn" class="btn" value="Pay with PayPal" />      
-	<a href ="https://www.sandbox.paypal.com/" name="delete" id="empty-cart"><img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-large.png" alt="Check out with PayPal" /></a>
-</form>
-
--->  
-	</div>
+  </div>
 
 
 

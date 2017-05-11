@@ -407,11 +407,11 @@ ul.dropdown-menu>li>a:hover {
 }
 /*Buttons*/
 .btn {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Roboto', serif;
 }
 .btn-primary {
 	font-size: 14px;
-	font-family: Calibri, sans-serif;
+	font-family: 'Roboto', serif;
 	text-transform: none;
 	color: #fff;
 	border-radius: 0px;
@@ -429,7 +429,7 @@ ul.dropdown-menu>li>a:hover {
 }
 .btn-info {
 	font-size: 14px;
-	font-family: Calibri, sans-serif;
+	font-family: 'Roboto', serif;
 	text-transform: none;
 	color: #434a4a;
 	border-radius: 0px;
@@ -447,7 +447,7 @@ ul.dropdown-menu>li>a:hover {
 }
 .btn-default {
 	font-size: 14px;
-	font-family: Calibri, sans-serif;
+	font-family: 'Roboto', serif;
 	text-transform: none;
 	color: #434a4a;
 	border-radius: 0px;
@@ -558,7 +558,6 @@ footer .btn.btn-primary {
 }
 
 html, body {
-    min-height: 100%;
 	background: #e5fcc2; /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   background: -webkit-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
@@ -1345,9 +1344,10 @@ input[type=text], input[type=number], input[type=email] {
 }
 button, input[type=button], input[type=submit], input[type=reset] {
     background-color: #45ada8;
+    border-radius: 6px;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 12px 20px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;

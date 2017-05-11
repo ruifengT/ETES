@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html style="height:100%;">
 <head>
 <meta charset="UTF-8">
-<title>ETES - Edit Profile</title>
+<title>ETES - Edit Ticket</title>
         <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
 
       <!-- Bootstrap -->
@@ -84,7 +84,7 @@
 </script>
 </head>
 
-<body onload="getData();">
+<body onload="getData();" style="height:100%;">
     <div class="topnav" id="myTopnav">
       <a onclick="goContact()">Contact Us</a>
       <a href="sign_up/signup.html">Logout </a>
@@ -99,14 +99,21 @@
 
 
           <div class="col-md-12">
-              <h1>Edit Profile</h1>
+              <h1>Edit Ticket</h1>
               <form action="php/EditTicket.php" method="post">
+                  <div>Ticket ID (unchangable)</div>
                   <input placeholder="Ticket ID" id="ticket_id" name="ID" type="text" required="" readonly="readonly" /><br>
+                  <div>Ticket Name</div>
                   <input placeholder="Ticket Name" id="ticket_name" name="Name" type="text" maxlength="15"/><br>
+                  <div>Ticket Details (you can enter event type, date, location, etc)</div>
                   <input placeholder="Ticket Details" id="ticket_detail" name="Detail" type="text" maxlength="70"/><br>
+                  <div>Quantity</div>
                   <input placeholder="Quantity" id="ticket_quantity" name="Quantity" type="number" min="1" maxlength="2"/><br>
+                  <div>Price</div>
                   <input placeholder="Price" id="ticket_price" name="Price" type="number" min="1" step="0.01" maxlength="3"/><br>
+                  <div>Post User ID (your user ID)</div>
                   <input placeholder="Post User ID" id="ticket_postedby" name="Postby" type="text" required="" readonly="readonly" /><br>
+                  <div>Pickup Address (for your ticket)</div>
                   <input placeholder = "Address" id="ticket_pickup_address" type="text" name="Address" pattern="[0-9]{0,4}[ ]{1}[A-Za-z ]{1,30}" title="Use a valid address, e.g. 101 Rainbow Way" /><br>
                   <input type='submit' value='Edit Ticket'>
               </form>

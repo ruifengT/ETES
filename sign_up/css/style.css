@@ -31,7 +31,8 @@ img{max-width:100%;}
 body p,h1,h2,h3,h4,h5,h6,a{
 	font-family: 'Roboto', sans-serif;
 }
-body {
+html, body {
+    height:100%;
 	background: #e5fcc2; /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   background: -webkit-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
@@ -128,7 +129,7 @@ input::placeholder {
 	-moz-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
     padding: 12px 38px;
     font-size: 18px;
     text-transform: uppercase;
