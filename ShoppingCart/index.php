@@ -134,7 +134,7 @@
 					?>" method="post">
 						<div>
 						<label for="qty-1">Quantity</label>
-						<input type="number" min="1" name="qty-1" id="qty-1" class="qty" value="1" maxlength="2" required /> of <?php echo $ticket_quantity?>
+						<input type="number" min="1" name="qty-1" id="qty-1" class="qty" value="1" max='<?php echo $ticket_quantity ?>' required /> of <?php echo $ticket_quantity?>
 						</div>
 						<p onclick="check()"><input type="submit" value="Checkout" class="btn"/></p>
 					</form>
