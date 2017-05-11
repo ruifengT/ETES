@@ -71,7 +71,7 @@
                 myObj = JSON.parse(this.responseText);
                 foo += "<p>"
                 for (x in myObj) {
-                    foo += "Order ID: "+myObj[x].order_id+" <br>Order Buyer: "+myObj[x].order_buy_user_id+" <br>Order Seller: "+myObj[x].order_sell_user_id+" <br>Ticket Id: "+myObj[x].order_ticket_id+" <br>Ticket Quantity: "+myObj[x].order_ticket_quantity+" <br>Total Price: "+myObj[x].order_price+"<br>Order Time stamp: "+myObj[x].order_stmp+"<br><br>";
+                    foo += "Order ID: "+myObj[x].order_id+" <br>Order Buyer: "+myObj[x].order_buy_user_id+" <br>Order Seller: "+myObj[x].order_sell_user_id+" <br>Ticket Id: "+myObj[x].order_ticket_id+" <br>Ticket Quantity: "+myObj[x].order_ticket_quantity+" <br>Total Price: "+myObj[x].order_price+"<br>Order Time stamp: "+myObj[x].order_stmp+"<br>Ticket Name: "+myObj[x].ticket_name+"<br>Ticket Details: "+myObj[x].ticket_detail+"<br><br>";
                 }
                 foo += "</p>"
                 document.getElementById("orders").innerHTML = foo;
