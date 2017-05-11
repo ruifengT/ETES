@@ -2,19 +2,24 @@ function initMap() {
         //todo: get order_id from url. 
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
-        //getAddress()
+       
+        //getAddress() 
         var xmlhttp, jsonArray, x, txt ="";
         xmlhttp = new XMLHttpRequest();
         
         xmlhttp.onreadystatechange = function() {
+            
             if (this.readyState == 4 && this.status == 200) {
+              
                  jsonArray = JSON.parse(this.responseText);
-                 txt = jsonArray[0].ticket_pickup_address;
+                 
+                 txt = jsonArray[0].ticket_pickup_address; 
                  sessionStorage.setItem("order",txt);
-               
+                
                  //document.getElementById('travel').innerHTML = 'Origin: <b>'+txt+'</b>';
                          //seller
             }
+           
             //else{alert("uh oh");}
         };
         xmlhttp.open("GET", "../php/Address.php", true);
