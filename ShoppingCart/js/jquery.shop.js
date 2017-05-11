@@ -242,7 +242,8 @@
 		// Displays the shopping cart
 
 		displayCart: function() {
-			if( this.$formCart.length ) {
+			
+			if( this.$formCart.length) {
 				var cart = this._toJSONObject( this.storage.getItem( this.cartName ) );
 				var items = cart.items;
 				var $tableCart = this.$formCart.find( ".shopping-cart" );
