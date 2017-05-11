@@ -57,7 +57,7 @@
         window.location = us_dashboard;
     }
     function goBuy()
-    {   
+    {
         window.location = 'index.php?user_id=' + getParameterByName('user_id');
     }
     function goSell()
@@ -124,15 +124,13 @@
 					<p> <?php echo $ticket_pickup_address?> </p>
                     <p>Ticket Posted By: <?php echo $ticket_postedby?></p>
 					<p class="product-price">&dollar;<?php echo $ticket_price?></p>
-					<form class="add-to-cart"  action="<?php 
+					<form class="add-to-cart"  action="<?php
 						if(empty($_GET['user_id']))
 						{
 							echo "../sign_up/signup.html";
 						}
 						else{
-							echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id;
-							// echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id, "?ticket_pickup_address=", $ticket_pickup_address;
-                            echo "checkout.html?ticket_id=", $ticket_id, "?user_id=", $id;						}
+							echo "checkout.html?ticket_id=", $ticket_id, "&user_id=", $id;					}
 					?>" method="post">
 						<div>
 						<label for="qty-1">Quantity</label>

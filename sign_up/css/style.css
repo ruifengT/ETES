@@ -128,7 +128,7 @@ input::placeholder {
 	-moz-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
     padding: 12px 38px;
     font-size: 18px;
     text-transform: uppercase;
