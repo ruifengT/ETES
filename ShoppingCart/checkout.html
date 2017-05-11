@@ -100,13 +100,12 @@
 				<strong>Subtotal</strong>: <span id="stotal"></span>
 			</p>
 		 </div>
-         <input type="button" id="create-order" onclick="createOrder()" value="Create Order" class="btn"></input>
          <!--delete update cart -->
          <!--
         <ul id="shopping-cart-actions"><input type="submit" name="update" id="update-cart" class="btn" value="Update Cart"></ul>
         -->
 
-        <form onsubmit="return orderRedirect()" method="post" id="checkout-order-form">
+        <form onsubmit="createOrder(); return orderRedirect()" method="post" id="checkout-order-form">
 		 	<h2>Your Billing and Shipping Details</h2>
 
 		 	<fieldset id="fieldset-billing">
@@ -174,7 +173,6 @@
 		 			</select>
 		 		</div>
 		 	</fieldset>
-
 		 	<p><input type="submit" id="submit-order" value="Complete Order" class="btn"/></p>
 
 		 </form>
