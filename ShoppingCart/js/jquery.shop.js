@@ -58,7 +58,7 @@
 			this.displayCart();
 			this.deleteProduct();
 			this.displayUserDetails();
-			this.populatePayPalForm();
+			//this.populatePayPalForm();
 
 
 		},

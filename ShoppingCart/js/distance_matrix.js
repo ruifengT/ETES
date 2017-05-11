@@ -10,7 +10,7 @@ function initMap() {
             if (this.readyState == 4 && this.status == 200) {
                  jsonArray = JSON.parse(this.responseText);
                  txt = jsonArray[0].ticket_pickup_address;
-                 sessionStorage.setItem("order",txt);
+                 //sessionStorage.setItem("order",txt);
                
                  //document.getElementById('travel').innerHTML = 'Origin: <b>'+txt+'</b>';
                          //seller
@@ -23,6 +23,7 @@ function initMap() {
         /*for(var i =0; i<sessionStorage.length;i++){
             console.log(sessionStorage.getItem(sessionStorage.key(i)));
         }*/
+        console.log(txt);
         var origin1 = sessionStorage.getItem("order");//"7000 Coliseum Way, Oakland, CA 94621, USA";
         //console.log(origin2);
         var destinationA;
