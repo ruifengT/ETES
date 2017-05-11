@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html style="height:100%;">
 <head>
 <meta charset="UTF-8">
-<title>ETES - Edit Profile</title>
+<title>ETES - Edit Ticket</title>
         <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
 
       <!-- Bootstrap -->
@@ -84,7 +84,7 @@
 </script>
 </head>
 
-<body onload="getData();">
+<body onload="getData();" style="height:100%;">
     <div class="topnav" id="myTopnav">
       <a onclick="goContact()">Contact Us</a>
       <a href="sign_up/signup.html">Logout </a>
@@ -99,7 +99,7 @@
 
 
           <div class="col-md-12">
-              <h1>Edit Profile</h1>
+              <h1>Edit Ticket</h1>
               <form action="php/EditTicket.php" method="post">
                   <input placeholder="Ticket ID" id="ticket_id" name="ID" type="text" required="" readonly="readonly" /><br>
                   <input placeholder="Ticket Name" id="ticket_name" name="Name" type="text" maxlength="15"/><br>

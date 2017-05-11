@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <div class="topnav" id="myTopnav"></div>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
 <script>
     	function getParameterByName(name, url) {
@@ -59,7 +60,7 @@
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a><a href='../sign_up/signup.html'>Logout</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {

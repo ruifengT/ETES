@@ -49,7 +49,7 @@
                 myObj = JSON.parse(this.responseText);
                 foo += "<p>"
                 for (x in myObj) {
-                    foo += "Ticket ID: "+myObj[x].ticket_id+" <br>Ticket Name: "+myObj[x].ticket_name+" <br>Details: "+myObj[x].ticket_detail+" <br>Ticket Quantity: "+myObj[x].ticket_quantity+" <br>Ticket Price: $"+myObj[x].ticket_price +" <br>Posted by: "+myObj[x].ticket_postedby +" <br>Address: "+myObj[x].ticket_pickup_address+" <br>Posted on: "+myObj[x].ticket_stmp+"<br><a href='edit_ticket.html?user_id="+id+"&ticket_id="+myObj[x].ticket_id+"' style='color:#45ada8'>Edit Ticket</a><br>";
+                    foo += "Ticket ID: "+myObj[x].ticket_id+" <br>Ticket Name: "+myObj[x].ticket_name+" <br>Details: "+myObj[x].ticket_detail+" <br>Ticket Quantity: "+myObj[x].ticket_quantity+" <br>Ticket Price: $"+myObj[x].ticket_price +" <br>Posted by: "+myObj[x].ticket_postedby +" <br>Address: "+myObj[x].ticket_pickup_address+" <br>Posted on: "+myObj[x].ticket_stmp+"<br><a href='edit_ticket.html?user_id="+id+"&ticket_id="+myObj[x].ticket_id+"' style='color:#45ada8'>Edit Ticket</a><br><br>";
                 }
                 foo += "</p>"
                 document.getElementById("tickets").innerHTML = foo;

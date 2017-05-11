@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html>
+  <html style="height:100%;">
     <head>
         <link rel="shortcut icon" type="image/png" href="images/favicon_2016.png"/>
       <title>Electronic Ticket Exchange Service</title>
@@ -66,7 +66,7 @@
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a> <a onclick='goBuy()'>Buy Tickets</a>  <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a> <a href='sign_up/signup.html'>Logout </a> <a onclick='goBuy()'>Buy Tickets</a>  <a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {
@@ -75,7 +75,7 @@
         document.getElementById("myTopnav").innerHTML = foo;
     }
     </script>
-    <body class="three-blocks" onload="signedIn()">
+    <body class="three-blocks" onload="signedIn()" style="height:100%;">
         
 <!-- displays backwards due to css -->
 <div class="topnav" id="myTopnav">

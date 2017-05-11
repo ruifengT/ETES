@@ -12,10 +12,6 @@
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 </head>
     <div class="topnav" id="myTopnav">
-  <a href="../contact.php">Contact Us</a>
-  <a href="../sign_up/signup.html">Sign In</a>
-  <a href="index.php">Buy Tickets</a>
-  <a href="../index.html">Home</a>
 </div>
 <script>
 	function check(){
@@ -72,7 +68,7 @@
         var foo = "";
         if (getParameterByName('user_id'))
     	{
-            foo += "<a onclick='goContact()'>Contact Us</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+            foo += "<a onclick='goContact()'>Contact Us</a><a href='../sign_up/signup.html'>Logout</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {

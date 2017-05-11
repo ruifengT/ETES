@@ -32,6 +32,7 @@ body p,h1,h2,h3,h4,h5,h6,a{
 	font-family: 'Roboto', sans-serif;
 }
 body {
+    height:100%;
 	background: #e5fcc2; /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   background: -webkit-linear-gradient(#e5fcc2,#9DE0AD,#45ada8,#547980,#594F4F);
