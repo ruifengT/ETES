@@ -8,10 +8,9 @@
 <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
       <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <div class="topnav" id="myTopnav"></div>
 <script type="text/javascript" src="js/jquery.shop.js"></script>
 <script>
-    	function getParameterByName(name, url) {
+        function getParameterByName(name, url) {
         if (!url) {
           url = window.location.href;
         }
@@ -23,44 +22,44 @@
         return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
     function goHome(){
-    	var us_id = "../index.html";
-    	if (getParameterByName('user_id'))
-    	{
-    		us_id = '../index.html?user_id=' + getParameterByName('user_id');
-    	}
+        var us_id = "../index.html";
+        if (getParameterByName('user_id'))
+        {
+            us_id = '../index.html?user_id=' + getParameterByName('user_id');
+        }
         window.location = us_id;
     }
     function goContact(){
-    	var us_id = '../contact.php';
-    	if (getParameterByName('user_id'))
-    	{
-    		us_id = '../contact.php?user_id=' + getParameterByName('user_id');
-    	}
+        var us_id = '../contact.php';
+        if (getParameterByName('user_id'))
+        {
+            us_id = '../contact.php?user_id=' + getParameterByName('user_id');
+        }
         window.location = us_id;
     }
     function goDash()
     {
         var us_dashboard = "../sign_up/signup.html";
         if (getParameterByName('user_id'))
-    	{
-    		us_dashboard = '../userdashboard.html?user_id=' + getParameterByName('user_id');
+        {
+            us_dashboard = '../userdashboard.html?user_id=' + getParameterByName('user_id');
         }
         window.location = us_dashboard;
     }
     function goBuy()
-    {
+    {   
         window.location = 'index.php?user_id=' + getParameterByName('user_id');
     }
     function goSell()
     {
-    		window.location = '../sell_tickets.html?user_id=' + getParameterByName('user_id');
+            window.location = '../sell_tickets.html?user_id=' + getParameterByName('user_id');
     }
     function signedIn()
     {
         var foo = "";
         if (getParameterByName('user_id'))
-    	{
-            foo += "<a onclick='goContact()'>Contact Us</a><a href='../sign_up/signup.html'>Logout</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
+        {
+            foo += "<a onclick='goContact()'>Contact Us</a><a onclick='goBuy()'>Buy Tickets</a> <a onclick='goSell()'> Sell Tickets</a><a onclick='goDash()'>Dashboard</a> <a onclick='goHome()'>Home</a> </div>"
         }
         else
             {
@@ -76,38 +75,36 @@
 <body onload="signedIn()" id="checkout-page">
 
 <div id="site">
-	<header id="masthead">
-		<h1>ETES - Checkout <span class="tagline">Thank you for your business!</h1>
-	</header>
-	<div id="content">
-		<h1>Checkout</h1>
+    <header id="masthead">
+        <h1>ETES - Checkout <span class="tagline">Thank you for your business!</h1>
+    </header>
+    <div id="content">
+        <h1>Checkout</h1>
         <form id="shopping-cart">
-			<table id="checkout-cart" class="shopping-cart">
-			  <thead>
-				<tr>
-					<th scope="col">Item</th>
-					<th scope="col">Qty</th>
-					<th scope="col" colspan="2">Price</th>
-				</tr>
-			  </thead>
-			  <tbody>
+            <table id="checkout-cart" class="shopping-cart">
+              <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col" colspan="2">Price</th>
+                </tr>
+              </thead>
+              <tbody>
 
-			  </tbody>
-			</table>
+              </tbody>
+            </table>
             </form>
-		 <div id="pricing">
-			<p id="sub-total">
-				<strong>Subtotal</strong>: <span id="stotal"></span>
-			</p>
-		 </div>
-         <!--we don't need this button
-         <input type="button" id="create-order" onclick="createOrder()" value="Create Order" class="btn"></input>
-         -->
-         <!--delete update cart -->
+         <div id="pricing">
+            <p id="sub-total">
+                <strong>Subtotal</strong>: <span id="stotal"></span>
+            </p>
+
+         </div>
          <!--
         <ul id="shopping-cart-actions"><input type="submit" name="update" id="update-cart" class="btn" value="Update Cart"></ul>
         -->
 
+<<<<<<< HEAD
         <form onsubmit="return orderRedirect()" method="post" id="checkout-order-form">
 		 	<h2>Your Payment Detail</h2>
 
@@ -248,11 +245,156 @@
 
             <p><input type="submit" id="submit-order" onclick="createOrder()" value="Proceed to Order" class="btn"></input></p>
 
+=======
+>>>>>>> 38c07ea7dd0aaf2012c2ca321c73185d1bacb297
+
+        <fieldset>
+        <br>
+
+        <div class="payment">
+
+                <form>
+                    <div class="form-group owner">
+                        <label for="owner">Name on Card</label>
+
+                        <input type="text" class="form-control" id="owner">
+                    </div>
+                    <br>
+                    
+                    <div class="form-group" id="card-number-field">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber">
+                    </div>
+                    <br>
+
+                    <div class="form-group CVV">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv">
+                    </div>
+                    <br>
 
 
+                    <div class="form-group" id="expiration-date">
+                        <label>Expiration Date</label>
+                        <select>
+                            <option value="01">January</option>
+                            <option value="02">February </option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select>
+                            <option value="16"> 2016</option>
+                            <option value="17"> 2017</option>
+                            <option value="18"> 2018</option>
+                            <option value="19"> 2019</option>
+                            <option value="20"> 2020</option>
+                            <option value="21"> 2021</option>
+                        </select>
+                    </div>
+                    <br>
 
-		 </form>
-	</div>
+                    <div class="form-group" id="credit_cards">
+                        <img src="assets/images/visa.jpg" id="visa">
+                        <img src="assets/images/mastercard.jpg" id="mastercard">
+                        <img src="assets/images/amex.jpg" id="amex">
+                    </div>
+                    <div class="form-group" id="pay-now">
+                  <!--
+                        <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                  -->
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+        <form onsubmit="return orderRedirect()" method="post" id="checkout-order-form">
+
+
+            <h2>Your Billing and Shipping Details</h2>
+
+            <fieldset id="fieldset-billing">
+                <legend>Billing</legend>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" data-type="string" data-message="This field cannot be empty" />
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" data-type="expression" data-message="Not a valid email address" />
+                </div>
+
+                <div>
+                    <label for="address">Address</label>
+                    <input type="text" name="address" id="address" data-type="string" pattern="[0-9]{0,4}[ ]{1}[A-Za-z ]{1,30}" title="Use a valid address, e.g. 101 Rainbow Way" />
+                </div>
+
+                <div>
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" data-type="string" data-message="This field cannot be empty" />
+                </div>
+                
+                <div>
+                    <label for="zip">ZIP Code</label>
+                    <input type="text" name="zip" id="zip" data-type="string" data-message="This field cannot be empty" />
+                </div>
+                <div>
+                    <label for="country">Country</label>
+                    <select name="country" id="country" data-type="string" data-message="This field cannot be empty">
+                        <option value="">Select</option>
+                        <option value="US">USA</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <div id="shipping-same">Same as Billing <input type="checkbox" id="same-as-billing" value=""/></div>
+
+            <fieldset id="fieldset-shipping">
+
+                <legend>Shipping</legend>
+
+                <div>
+                    <label for="sname">Name</label>
+                    <input type="text" name="sname" id="sname" data-type="string" data-message="This field cannot be empty" />
+                </div>
+                <div>
+                    <label for="semail">Email</label>
+                    <input type="text" name="semail" id="semail" data-type="expression" data-message="Not a valid email address" />
+                </div>
+
+                 <div>
+                    <label for="saddress">Address</label>
+                    <input type="text" name="address" id="address" data-type="string" pattern="[0-9]{0,4}[ ]{1}[A-Za-z ]{1,30}" title="Use a valid address, e.g. 101 Rainbow Way" />
+                </div>
+                
+                <div>
+                    <label for="scity">City</label>
+                    <input type="text" name="scity" id="scity" data-type="string" data-message="This field cannot be empty" />
+                </div>
+               
+                <div>
+                    <label for="szip">ZIP Code</label>
+                    <input type="text" name="szip" id="szip" data-type="string" data-message="This field cannot be empty" />
+                </div>
+                <div>
+                    <label for="scountry">Country</label>
+                    <select name="scountry" id="scountry" data-type="string" data-message="This field cannot be empty">
+                        <option value="">Select</option>
+                        <option value="US">USA</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <p><input type="submit" id="submit-order" value="Complete Purchase" class="btn" onclick = "createOrder()"/></p>
+
+         </form>
+    </div>
 
 
 
@@ -306,7 +448,7 @@ function getParameterByName(name, url) {
 <script src="assets/js/script.js"></script>
 <!--
 <footer id="site-info">
-	</footer>
+    </footer>
 -->
 </body>
 </html>
