@@ -100,7 +100,9 @@
 				<strong>Subtotal</strong>: <span id="stotal"></span>
 			</p>
 		 </div>
+         <!--we don't need this button
          <input type="button" id="create-order" onclick="createOrder()" value="Create Order" class="btn"></input>
+         -->
          <!--delete update cart -->
          <!--
         <ul id="shopping-cart-actions"><input type="submit" name="update" id="update-cart" class="btn" value="Update Cart"></ul>
@@ -149,14 +151,13 @@
             <img src="assets/images/mastercard.jpg" id="mastercard">
             <img src="assets/images/amex.jpg" id="amex">
         </div>
+        
+        <!--
         <div class="form-group" id="pay-now">
             <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
         </div>
+        -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
-    <script src="assets/js/script.js"></script>
 
 
       </fieldset>
@@ -228,8 +229,12 @@
 		 	</fieldset>
 
 
-
+            <!--
 		 	<p><input type="submit" id="submit-order" value="Complete Order" class="btn"/></p>
+            -->
+
+            <p><input type="submit" id="submit-order" onclick="createOrder()" value="Proceed to Order" class="btn"></input></p>
+
 
 		 </form>
 	</div>
@@ -279,6 +284,11 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
+<script src="assets/js/script.js"></script>
 <!--
 <footer id="site-info">
 	</footer>
