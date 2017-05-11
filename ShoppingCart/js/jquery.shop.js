@@ -33,7 +33,7 @@
 			this.currency = "&dollar;"; // HTML entity of the currency to be displayed in the layout
 			this.currencyString = "$"; // Currency symbol as textual string
 			this.paypalCurrency = "USD"; // PayPal's currency code
-			this.paypalBusinessEmail = "nanthana.thanonklin@sjsu.edu"; // Your Business PayPal's account email address
+			this.paypalBusinessEmail = "nanthana.thanonklin@gmail.com"; // Your Business PayPal's account email address
 			this.paypalURL = "https://www.sandbox.paypal.com/cgi-bin/webscr"; // The URL of the PayPal's form
 
 			// Object containing patterns for form validation
@@ -81,7 +81,7 @@
 		},
 
 		// Appends the required hidden values to the PayPal's form before submitting
-	/*
+
 		populatePayPalForm: function() {
 			var self = this;
 			if( self.$paypalForm.length ) {
@@ -120,7 +120,7 @@
 
 			}
 		},
-		*/
+
 		// Displays the user's information
 
 		displayUserDetails: function() {
