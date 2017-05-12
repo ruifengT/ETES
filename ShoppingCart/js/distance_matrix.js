@@ -2,36 +2,16 @@ function initMap() {
         //todo: get order_id from url. 
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
-<<<<<<< HEAD
-       
-        //getAddress() 
-        var xmlhttp, jsonArray, x, txt ="";
-=======
         //getAddress()
  var xmlhttp, jsonArray, x, txt ="";
         var ticketId = "ticket_id="+getParameterByName("ticket_id");
->>>>>>> 8b5eef16dee5a659063e82693d1821a890c73960
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
-            
             if (this.readyState == 4 && this.status == 200) {
-              
                  jsonArray = JSON.parse(this.responseText);
-<<<<<<< HEAD
-                 
-                 txt = jsonArray[0].ticket_pickup_address; 
-                 sessionStorage.setItem("order",txt);
-                
-                 //document.getElementById('travel').innerHTML = 'Origin: <b>'+txt+'</b>';
-                         //seller
-            }
-           
-            //else{alert("uh oh");}
-=======
                  txt = jsonArray[0].ticket_pickup_address;
                  sessionStorage.setItem("ticketAddress",txt);
             }
->>>>>>> 8b5eef16dee5a659063e82693d1821a890c73960
         };
         xmlhttp.open("POST", "../php/Address.php", true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
