@@ -3,28 +3,20 @@ function initMap() {
         var bounds = new google.maps.LatLngBounds;
         var markersArray = [];
         //getAddress()
-        var xmlhttp, jsonArray, x, txt ="";
+ var xmlhttp, jsonArray, x, txt ="";
+        var ticketId = "ticket_id="+getParameterByName("ticket_id");
         xmlhttp = new XMLHttpRequest();
-        
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                  jsonArray = JSON.parse(this.responseText);
                  txt = jsonArray[0].ticket_pickup_address;
-                 sessionStorage.setItem("order",txt);
-               
-                 //document.getElementById('travel').innerHTML = 'Origin: <b>'+txt+'</b>';
-                         //seller
+                 sessionStorage.setItem("ticketAddress",txt);
             }
-            //else{alert("uh oh");}
         };
-        xmlhttp.open("GET", "../php/Address.php", true);
+        xmlhttp.open("POST", "../php/Address.php", true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xmlhttp.send();//in parens, enter order_id = orderId
-        /*for(var i =0; i<sessionStorage.length;i++){
-            console.log(sessionStorage.getItem(sessionStorage.key(i)));
-        }*/
-        var origin1 = sessionStorage.getItem("order");//"7000 Coliseum Way, Oakland, CA 94621, USA";
-        //console.log(origin2);
+        xmlhttp.send(ticketId);
+        var origin1 = sessionStorage.getItem("ticketAddress");
         var destinationA;
         if(sessionStorage.getItem( "shipping-name" ) == null ){
             destinationA = sessionStorage.getItem("billing-address") +","+ sessionStorage.getItem("billing-city")+","+sessionStorage.getItem("billing-zip") + "," + sessionStorage.getItem("billing-country");
@@ -125,4 +117,15 @@ function displayRoute(origin, destination, service, display) {
       alert('Could not display directions due to: ' + status);
     }
   });
+}
+function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }

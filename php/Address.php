@@ -1,10 +1,9 @@
 <?php
 require "Config.php";
 
-$order_id = 2;
-    //$_POST['ticket_id'];
+$ticket_id = $_POST['ticket_id'];
 
-$sql_address =  "SELECT ticket_pickup_address FROM tickets AS t INNER JOIN orders AS o ON t.ticket_id = o.order_ticket_id WHERE order_id = " . $order_id;
+$sql_address =  "SELECT ticket_pickup_address FROM tickets WHERE ticket_id = " . $ticket_id;
 
 $result = mysqli_query($conn, $sql_address)  or die ("Error: ".mysqli_error($conn));
 while($row = mysqli_fetch_array($result)){
