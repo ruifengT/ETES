@@ -97,16 +97,19 @@
                 <p><form><input type="search" name="search" placeholder="Search for tickets"></form></p><br />
                 <p></p>
                 <form action="php/Postticket.php" method="post">
+                    <div>User ID (unchangable)</div>
                     <input placeholder="User ID" id="user_id" name="ID" type="text" required="" readonly="readonly" /><br>
                     <script type="text/javascript">
                     var id = document.getElementById("user_id");
                     id.value = getParameterByName('user_id');
                     </script>
                     <input placeholder="Ticket Name" name="Name" type="text" maxlength="50" required="" /><br>
+                    <div>Ticket Details (Event date, Event Time, Type of Event, etc)</div>
                     <input placeholder="Ticket Details" name="Detail" type="text" maxlength="70" required="" /><br>
                     <input placeholder="Quantity" name="Quantity" type="number" min="1" maxlength="2"required="" /><br>
                     <input placeholder="Price" name="Price" type="number" min="1" step="0.01" maxlength="3"required="" /><br>
-                    <input placeholder = "Address" type="text" name="Address" id="address" pattern="[0-9]{0,4}[ ]{1}[A-Za-z ]{1,30}" title="Use a valid address, e.g. 101 Rainbow Way" /><br>
+                    <div>Use a valid address, e.g. 101 Rainbow Way</div>
+                    <input placeholder = "Address" type="text" name="Address" id="address" pattern="[0-9]{0,4}[ ]{1}[A-Za-z ]{1,30}" title="Use a valid address, e.g. 101 Rainbow Way" required=""/><br>
                     
                     <input type='submit' value='Post Ticket'>
                 </form>
@@ -149,7 +152,10 @@
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
 
-     
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/signup.js"></script>
     </body>
 </html>
 
